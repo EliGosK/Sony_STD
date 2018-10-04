@@ -1,0 +1,17 @@
+@charset "windows-874";
+.text {
+	font-family: "Tahoma";
+	font-size: 12px;
+	font-weight: bold;
+}
+.header {
+	font-family: "Tahoma";
+	font-size: 14px;
+	font-weight: bold;
+}
+body {
+	font-family: "Tahoma";
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}

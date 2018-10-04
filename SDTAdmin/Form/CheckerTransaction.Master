@@ -1,0 +1,147 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="CheckerTransaction.master.vb"
+    Inherits="Form.CheckerTransaction" %>
+
+<%@ Register Src="~/Controls/ctbvCtlTop.ascx" TagName="ctbvCtlTop" TagPrefix="ucctbvCtlTop" %>
+<%@ Register Src="~/Controls/Copyrights.ascx" TagName="Copyrights" TagPrefix="ucCopyRights" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+    <link href="../Admin.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Utils.js"></script>
+
+    <script language="javascript" type="text/javascript">
+        SetOnKeyDownEnter(window.document)
+    </script>
+
+    <link href="../Checker.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">        history.forward()</script>
+
+    <script language="javascript" type="text/javascript">
+        function allownumbers(e) {
+            var key = window.event ? e.keyCode : e.which;
+            var keychar = String.fromCharCode(key);
+            var reg = new RegExp("[0-9.]");
+            if (key == 8) {
+                keychar = String.fromCharCode(key);
+            }
+            if (key == 13) {
+                key = 8;
+                keychar = String.fromCharCode(key);
+            }
+            return reg.test(keychar);
+        } 
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="masterBody">
+    <form id="form1" runat="server">
+    <table class="headerTable">
+        <tr>
+            <td style="height: 23px">
+                <ucctbvCtlTop:ctbvCtlTop ID="CtbvCtlTop1" runat="server" />
+            </td>
+            <td align="right">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <a href="frmCTBV_Login.aspx">
+                                <asp:ImageButton ID="btnExit" runat="server" ImageUrl="~/images/Exit.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="logout">
+                            Log Out
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="menuLevel">
+        <tr>
+            <td>
+                <b><a href="frmCTBV_Menu.aspx">Main Menu </a>&gt;<a href="frmRevenueMonitor.aspx"> Box
+                    Office </a>&gt;<asp:HyperLink ID="hplMovieName" runat="server">[Movie Name]</asp:HyperLink>
+                    &nbsp;&gt;
+                    <asp:HyperLink ID="hplRevenueDate" runat="server">[Revenue Date]</asp:HyperLink>
+                    &nbsp;&gt;
+                    <asp:HyperLink ID="hplTheaterName" runat="server">[Theater Name]</asp:HyperLink>
+                    &nbsp;<asp:Label ID="lblBeforeScreen" runat="server" Text="&gt;"></asp:Label>
+                    <asp:HyperLink ID="hplScreen" runat="server">[Screen]</asp:HyperLink>
+                    &nbsp;<asp:Label ID="lblBeforeSession" runat="server" Text="&gt;"></asp:Label>
+                    <asp:Label ID="lblSession" runat="server" Text="[Session]"></asp:Label>
+                </b>
+            </td>
+        </tr>
+    </table>
+    <div class="mainDiv">
+        <table class="mainTable" height="29" bordercolor="#e6b04d" border="1" align="center"
+            cellpadding="3" cellspacing="3">
+            <tr>
+                <td>
+                    <div >
+                        <div style="text-align: center;">
+                            <table class="normalTable">
+                                <tr class="valueSet">
+                                    <td align="right">
+                                        Title :&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtTitle" runat="server" Columns="50" ReadOnly="True"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="valueSet">
+                                    <td align="right">
+                                        Destributor :&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtDis" runat="server" Columns="50" ReadOnly="True"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="valueSet">
+                                    <td align="right">
+                                        Genre :&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtGenre" runat="server" Columns="50" ReadOnly="True"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr class="valueSet">
+                                    <td align="right">
+                                        Release Date :&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtReleaseDate" runat="server" Columns="50" ReadOnly="True"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr style="background-color: white">
+                <td>
+                    <div style="text-align: center;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ucCopyRights:Copyrights ID="copyRights" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

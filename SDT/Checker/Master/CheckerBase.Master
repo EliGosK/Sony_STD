@@ -1,0 +1,31 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="CheckerBase.master.vb"
+    Inherits="SDT.Checker.Master.CheckerBase" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- meta name="viewport" content="width=<%= Request.Browser("ScreenPixelsWidth") %>, height=<%=Request.Browser("ScreenPixelsHeight")%>" /-->
+    <meta name="viewport" content="width=<%= Request.Browser("ScreenPixelsWidth") %> ; initial-scale=1.0" />
+    <title>SDT</title>
+    <link href="../../Checker.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">        history.forward()</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="area">
+        <div style="text-align: center;">
+            <br />
+            <asp:Label ID="lblTitle" runat="server" CssClass="labelTitle"></asp:Label>
+            <br />
+            <form id="form1" runat="server">
+            <asp:HiddenField ID="hdfTempData" runat="server" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

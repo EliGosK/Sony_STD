@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Delete" xml:space="preserve">
+    <value>DELETE
+FROM tblVPF_MovieDefaultSet
+WHERE movie_id = @movie_id
+	AND circuit_id = @circuit_id
+	AND film_type_sound_id = @film_type_sound_id;</value>
+  </data>
+  <data name="SelectData" xml:space="preserve">
+    <value>SELECT filter.movie_id
+	, filter.circuit_id
+	, filter.film_type_sound_id
+	, vmd.vpf_start_date
+	, vmd.sets_amount
+	, vmd.set_days
+	, vmd.set_sessions
+	, vmd.set_price
+	, vmd.update_date
+	, vmd.update_by
+	, ISNULL(c.circuit_name, 'All') AS circuit_name
+	, fts.film_type_sound_header_group
+FROM (
+	SELECT vmd.movie_id
+		, MAX(vmd.circuit_id) AS circuit_id
+		, vmd.film_type_sound_id
+	FROM tblVPF_MovieDefaultSet AS vmd
+	WHERE (
+			@movie_id IS NULL
+			OR vmd.movie_id = @movie_id
+			)
+		AND (
+			@circuit_id IS NULL
+			OR (
+				vmd.circuit_id = @circuit_id
+				OR vmd.circuit_id = - 1
+				)
+			)
+		AND (
+			@film_type_sound_id IS NULL
+			OR vmd.film_type_sound_id = @film_type_sound_id
+			)
+	GROUP BY vmd.movie_id
+		, vmd.film_type_sound_id
+	) AS filter
+INNER JOIN tblVPF_MovieDefaultSet AS vmd
+	ON vmd.movie_id = filter.movie_id
+		AND vmd.circuit_id = filter.circuit_id
+		AND vmd.film_type_sound_id = filter.film_type_sound_id
+INNER JOIN tblFilmTypeSound AS fts
+	ON fts.film_type_sound_id = vmd.film_type_sound_id
+LEFT JOIN tblCircuit AS c
+	ON c.circuit_id = vmd.circuit_id;</value>
+  </data>
+  <data name="UpdateInsert" xml:space="preserve">
+    <value>UPDATE tblVPF_MovieDefaultSet
+SET vpf_start_date = @vpf_start_date
+	, sets_amount = @sets_amount
+	, set_days = @set_days
+	, set_sessions = @set_sessions
+	, set_price = @set_price
+	, update_date = @cvDate
+	, update_by = @update_by
+WHERE movie_id = @movie_id
+	AND circuit_id = @circuit_id
+	AND film_type_sound_id = @film_type_sound_id;
+
+IF @@ROWCOUNT = 0
+BEGIN
+	INSERT INTO tblVPF_MovieDefaultSet (
+		movie_id
+		, circuit_id
+		, film_type_sound_id
+		, vpf_start_date
+		, sets_amount
+		, set_days
+		, set_sessions
+		, set_price
+		, update_date
+		, update_by
+		)
+	VALUES (
+		@movie_id
+		, @circuit_id
+		, @film_type_sound_id
+		, @vpf_start_date
+		, @sets_amount
+		, @set_days
+		, @set_sessions
+		, @set_price
+		, @cvDate
+		, @update_by
+		);
+END</value>
+  </data>
+</root>

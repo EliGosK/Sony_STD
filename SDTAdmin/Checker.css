@@ -1,0 +1,89 @@
+﻿.normalFont
+{
+	font-family: sans-serif;
+	font-size: small;
+}
+div.area
+{
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: small; /*height: 350px;*/
+	width: 220px;
+	overflow: visible;
+}
+.labelTitle
+{
+	color: #FF9900;
+	font-size: medium;
+	font-weight: bold;
+}
+.labelFocus
+{
+	color: #006400;
+	font-size: small;
+	font-weight: bold;
+}
+table.tableDisplay
+{
+	width: 95%;
+}
+table.tableDisplayPrimaryData
+{
+	background-color: #EEEEEE;
+	border-color: #888888;
+	border-width: 1px;
+	width: 95%;
+}
+td.tdOneCenter
+{
+	text-align: center;
+}
+td.tdOneLeft
+{
+	color: #00008B;
+	text-align: left;
+}
+td.tdOneRight
+{
+	color: #00008B;
+	text-align: right;
+}
+td.tdTitle
+{
+	color: #00008B;
+	text-align: right;
+	width: 50px;
+}
+td.tdInput
+{
+	font-weight: bold;
+	text-align: left;
+}
+.ButtonDefualt
+{
+	background-color: #FFEECC;
+	border-color: orange;
+	font-family: sans-serif;
+	font-size: smaller;
+	font-weight: bold;
+	height: 25px;
+	width: 75px;
+}
+.ButtonNewMsg
+{
+	background-color: #CC0000;
+	border-color: #FFEECC;
+	color: Yellow;
+	font-family: sans-serif;
+	font-size: smaller;
+	font-weight: bold;
+	height: 25px;
+	width: 75px;
+}
+.labelError
+{
+	color: red;
+	font-family: sans-serif;
+	font-size: small;
+	font-weight: bold;
+}

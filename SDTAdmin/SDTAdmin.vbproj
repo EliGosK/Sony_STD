@@ -1,0 +1,1905 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{690F8B19-C4A8-4497-B462-D8E3DBB80F53}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SDTAdmin</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>
+    </RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SDTAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SDTAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>none</DebugType>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="GridViewUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommonAdmin.vb" />
+    <Compile Include="Common\Database\Database.vb" />
+    <Compile Include="Common\Database\DatabaseProvider.vb" />
+    <Compile Include="Common\Database\SqlDatabase.vb" />
+    <Compile Include="Component\cmDatabase.vb" />
+    <Compile Include="Component\MainApp.vb" />
+    <Compile Include="Controls\Copyrights.ascx.designer.vb">
+      <DependentUpon>Copyrights.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Copyrights.ascx.vb">
+      <DependentUpon>Copyrights.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePicker.ascx.designer.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePicker.ascx.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MoviePopupSN.ascx.designer.vb">
+      <DependentUpon>MoviePopupSN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MoviePopupSN.ascx.vb">
+      <DependentUpon>MoviePopupSN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctbvCtlTop.ascx.vb">
+      <DependentUpon>ctbvCtlTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctbvCtlTopLogin.ascx.vb">
+      <DependentUpon>ctbvCtlTopLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctlFooterMargin.ascx.vb">
+      <DependentUpon>ctlFooterMargin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.vb">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.vb">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Movie1Popup.ascx.designer.vb">
+      <DependentUpon>Movie1Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Movie1Popup.ascx.vb">
+      <DependentUpon>Movie1Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\popUpCal.ascx.designer.vb">
+      <DependentUpon>popUpCal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\popUpCal.ascx.vb">
+      <DependentUpon>popUpCal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectColor.ascx.designer.vb">
+      <DependentUpon>SelectColor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectColor.ascx.vb">
+      <DependentUpon>SelectColor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TheatrePopup.ascx.designer.vb">
+      <DependentUpon>TheatrePopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TheatrePopup.ascx.vb">
+      <DependentUpon>TheatrePopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Trailer_Header_SetupPopup.ascx.designer.vb">
+      <DependentUpon>Trailer_Header_SetupPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Trailer_Header_SetupPopup.ascx.vb">
+      <DependentUpon>Trailer_Header_SetupPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccessLayer\MasterData\FilmTypeDAL.vb" />
+    <Compile Include="DataAccessLayer\MasterData\FilmTypeSoundDAL.vb" />
+    <Compile Include="DataAccessLayer\MasterData\HolidayDAL.vb" />
+    <Compile Include="DataAccessLayer\MasterData\TheaterDAL.vb" />
+    <Compile Include="default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\CheckerTransaction.Master.designer.vb">
+      <DependentUpon>CheckerTransaction.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CheckerTransaction.Master.vb">
+      <DependentUpon>CheckerTransaction.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_ChangePassword.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_ChangePassword.aspx.vb">
+      <DependentUpon>frmCTBV_AT_ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SystemPolicies.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_SystemPolicies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SystemPolicies.aspx.vb">
+      <DependentUpon>frmCTBV_AT_SystemPolicies.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportMovieMarketShare.aspx.designer.vb">
+      <DependentUpon>frmReportMovieMarketShare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportMovieMarketShare.aspx.vb">
+      <DependentUpon>frmReportMovieMarketShare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportMovieMarketShareParam.aspx.designer.vb">
+      <DependentUpon>frmReportMovieMarketShareParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportMovieMarketShareParam.aspx.vb">
+      <DependentUpon>frmReportMovieMarketShareParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportCheckerWage.aspx.designer.vb">
+      <DependentUpon>frmReportCheckerWage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportCheckerWage.aspx.vb">
+      <DependentUpon>frmReportCheckerWage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportCheckerWageParam.aspx.designer.vb">
+      <DependentUpon>frmReportCheckerWageParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportCheckerWageParam.aspx.vb">
+      <DependentUpon>frmReportCheckerWageParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportVirtualPrintFee.aspx.designer.vb">
+      <DependentUpon>frmReportVirtualPrintFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportVirtualPrintFee.aspx.vb">
+      <DependentUpon>frmReportVirtualPrintFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow2.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow2.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow3.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow3.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam2.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam2.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam3.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam3.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmVPF_Summary.aspx.designer.vb">
+      <DependentUpon>frmVPF_Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmVPF_Summary.aspx.vb">
+      <DependentUpon>frmVPF_Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmVPF_ManageMovieSet.aspx.designer.vb">
+      <DependentUpon>frmVPF_ManageMovieSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmVPF_ManageMovieSet.aspx.vb">
+      <DependentUpon>frmVPF_ManageMovieSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmVPF_MovieDefaultSet.aspx.designer.vb">
+      <DependentUpon>frmVPF_MovieDefaultSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmVPF_MovieDefaultSet.aspx.vb">
+      <DependentUpon>frmVPF_MovieDefaultSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Holiday.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Holiday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Holiday.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Holiday.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmVPF_ProblemRecord.aspx.designer.vb">
+      <DependentUpon>frmVPF_ProblemRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmVPF_ProblemRecord.aspx.vb">
+      <DependentUpon>frmVPF_ProblemRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_VPF.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu_VPF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_VPF.aspx.vb">
+      <DependentUpon>frmCTBV_Menu_VPF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportGeneralIndustryMarketShare.aspx.designer.vb">
+      <DependentUpon>frmReportGeneralIndustryMarketShare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportGeneralIndustryMarketShare.aspx.vb">
+      <DependentUpon>frmReportGeneralIndustryMarketShare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportGeneralIndustryMarketShareParam.aspx.designer.vb">
+      <DependentUpon>frmReportGeneralIndustryMarketShareParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportGeneralIndustryMarketShareParam.aspx.vb">
+      <DependentUpon>frmReportGeneralIndustryMarketShareParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Ticket.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu_Ticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Ticket.aspx.vb">
+      <DependentUpon>frmCTBV_Menu_Ticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeSound.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeSound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeSound.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeSound.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeSoundAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeSoundAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeSoundAdd.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeSoundAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmType.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FilmType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmType.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FilmType.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FilmTypeAdd.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FilmTypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP_Movie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP_Movie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie2.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP_Movie2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie2.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_FreeTicketAndPerCAP_Movie2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_TicketType.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_TicketType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_TicketType.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_TicketType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_TicketType_Movie.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_TicketType_Movie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_TicketType_Movie.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_TicketType_Movie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportSummaryTicket.aspx.designer.vb">
+      <DependentUpon>frmReportSummaryTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportSummaryTicket.aspx.vb">
+      <DependentUpon>frmReportSummaryTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmReportSummaryTicketParam.aspx.designer.vb">
+      <DependentUpon>frmReportSummaryTicketParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReportSummaryTicketParam.aspx.vb">
+      <DependentUpon>frmReportSummaryTicketParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByDateComp.aspx.designer.vb">
+      <DependentUpon>frmRevByDateComp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByDateComp.aspx.vb">
+      <DependentUpon>frmRevByDateComp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowEx.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowEx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowEx.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowEx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LavelAndWage.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_LavelAndWage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LavelAndWage.aspx.vb">
+      <DependentUpon>frmCTBV_AT_LavelAndWage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormatComp.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormatComp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormatComp.aspx.vb">
+      <DependentUpon>frmRptSoundFormatComp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SetupDate.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_SetupDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SetupDate.aspx.vb">
+      <DependentUpon>frmCTBV_AT_SetupDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SetupDate_Detail.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_SetupDate_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_SetupDate_Detail.aspx.vb">
+      <DependentUpon>frmCTBV_AT_SetupDate_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Session.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Session.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Session.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Session.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Config.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Config.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Former.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Former.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Former.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Former.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_FormerAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_FormerAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_FormerAdd.aspx.vb">
+      <DependentUpon>frmCTBV_AT_FormerAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Present.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Present.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Present.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Present.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_PresentAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_PresentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_PresentAdd.aspx.vb">
+      <DependentUpon>frmCTBV_AT_PresentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Level.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Level.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LevelAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_LevelAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LevelAdd.aspx.vb">
+      <DependentUpon>frmCTBV_AT_LevelAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_StudioAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_StudioAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_StudioAdd.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_StudioAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Studio.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Studio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Studio.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Studio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptIndustryInfo.aspx.designer.vb">
+      <DependentUpon>frmRptIndustryInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptIndustryInfo.aspx.vb">
+      <DependentUpon>frmRptIndustryInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptIndustryInfoParam.aspx.designer.vb">
+      <DependentUpon>frmRptIndustryInfoParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptIndustryInfoParam.aspx.vb">
+      <DependentUpon>frmRptIndustryInfoParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat_sd.aspx.designer.vb">
+      <DependentUpon>frmRptCompSoundFormat_sd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat_sd.aspx.vb">
+      <DependentUpon>frmRptCompSoundFormat_sd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat_st.aspx.designer.vb">
+      <DependentUpon>frmRptCompSoundFormat_st.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat_st.aspx.vb">
+      <DependentUpon>frmRptCompSoundFormat_st.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat.aspx.designer.vb">
+      <DependentUpon>frmRptCompSoundFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompSoundFormat.aspx.vb">
+      <DependentUpon>frmRptCompSoundFormat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodDistMovie.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodDistMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodDistMovie.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodDistMovie.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodNationMovie.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodNationMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodNationMovie.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodNationMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptOcp.aspx.designer.vb">
+      <DependentUpon>frmRptOcp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptOcp.aspx.vb">
+      <DependentUpon>frmRptOcp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptOcpParam.aspx.designer.vb">
+      <DependentUpon>frmRptOcpParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptOcpParam.aspx.vb">
+      <DependentUpon>frmRptOcpParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormatBoxoffice.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormatBoxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormatBoxoffice.aspx.vb">
+      <DependentUpon>frmRptSoundFormatBoxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sfd.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_sfd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sfd.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_sfd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sft.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_sft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sft.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_sft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByTotal.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByTotal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByTotal.aspx.vb">
+      <DependentUpon>frmRptTrailerByTotal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerViewership.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerViewership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerViewership.aspx.vb">
+      <DependentUpon>frmRptTrailerViewership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerViewershipParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerViewershipParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerViewershipParam.aspx.vb">
+      <DependentUpon>frmRptTrailerViewershipParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformationCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptTheatreInformationCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformationCircuit.aspx.vb">
+      <DependentUpon>frmRptTheatreInformationCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseTheatre.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByReleaseTheatre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseTheatre.aspx.vb">
+      <DependentUpon>frmRptTrailerByReleaseTheatre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByReleaseCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseCircuit.aspx.vb">
+      <DependentUpon>frmRptTrailerByReleaseCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformation.aspx.designer.vb">
+      <DependentUpon>frmRptTheatreInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformation.aspx.vb">
+      <DependentUpon>frmRptTheatreInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformationParam.aspx.designer.vb">
+      <DependentUpon>frmRptTheatreInformationParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTheatreInformationParam.aspx.vb">
+      <DependentUpon>frmRptTheatreInformationParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByRelease.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByRelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByRelease.aspx.vb">
+      <DependentUpon>frmRptTrailerByRelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByReleaseParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByReleaseParam.aspx.vb">
+      <DependentUpon>frmRptTrailerByReleaseParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Disdistributor.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Disdistributor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Disdistributor.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Disdistributor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_DisdistributorAdd.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_DisdistributorAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_DisdistributorAdd.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_DisdistributorAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmctbv_mmd_theater_seatprice.aspx.designer.vb">
+      <DependentUpon>frmctbv_mmd_theater_seatprice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmctbv_mmd_theater_seatprice.aspx.vb">
+      <DependentUpon>frmctbv_mmd_theater_seatprice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_RC_Menu.aspx.designer.vb">
+      <DependentUpon>frmCTBV_RC_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_RC_Menu.aspx.vb">
+      <DependentUpon>frmCTBV_RC_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodAllCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodAllCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodAllCircuit.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodAllCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodAllTheatre.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodAllTheatre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodAllTheatre.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodAllTheatre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioC.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioC.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPDABoxOffice.aspx.designer.vb">
+      <DependentUpon>frmRptPDABoxOffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPDABoxOffice.aspx.vb">
+      <DependentUpon>frmRptPDABoxOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioOnlyCircuitTheatre.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioOnlyCircuitTheatre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioOnlyCircuitTheatre.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioOnlyCircuitTheatre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LateShow.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_LateShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_LateShow.aspx.vb">
+      <DependentUpon>frmCTBV_AT_LateShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Message.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Message.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Add.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Main.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Main.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_MessageNew.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_MessageNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_MessageNew.aspx.vb">
+      <DependentUpon>frmCTBV_AT_MessageNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_MonitorStatus.aspx.designer.vb">
+      <DependentUpon>frmCTBV_AT_MonitorStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_MonitorStatus.aspx.vb">
+      <DependentUpon>frmCTBV_AT_MonitorStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_MMD.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu_MMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Trailer.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu_Trailer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Trailer.aspx.vb">
+      <DependentUpon>frmCTBV_Menu_Trailer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Trailer_Rpt.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Menu_Trailer_Rpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_Trailer_Rpt.aspx.vb">
+      <DependentUpon>frmCTBV_Menu_Trailer_Rpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Movie.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Movie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Movie_Add.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Movie_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Movie_Add.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Movie_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Theater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theatersub_Del.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Theatersub_Del.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theatersub_Del.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Theatersub_Del.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater_Add.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Theater_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater_Edit.aspx.designer.vb">
+      <DependentUpon>frmCTBV_MMD_Theater_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater_Edit.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Theater_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Setup.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Trailer_Setup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Setup.aspx.vb">
+      <DependentUpon>frmCTBV_Trailer_Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Setup_Detail.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Trailer_Setup_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Setup_Detail.aspx.vb">
+      <DependentUpon>frmCTBV_Trailer_Setup_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Show.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Trailer_Show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Show.aspx.vb">
+      <DependentUpon>frmCTBV_Trailer_Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Show_Detail.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Trailer_Show_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Trailer_Show_Detail.aspx.vb">
+      <DependentUpon>frmCTBV_Trailer_Show_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Unterminate.aspx.designer.vb">
+      <DependentUpon>frmCTBV_Unterminate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Unterminate.aspx.vb">
+      <DependentUpon>frmCTBV_Unterminate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomer.aspx.designer.vb">
+      <DependentUpon>frmExportForCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomer.aspx.vb">
+      <DependentUpon>frmExportForCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomerComp.aspx.designer.vb">
+      <DependentUpon>frmExportForCustomerComp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomerComp.aspx.vb">
+      <DependentUpon>frmExportForCustomerComp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomerCompParam.aspx.designer.vb">
+      <DependentUpon>frmExportForCustomerCompParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportForCustomerCompParam.aspx.vb">
+      <DependentUpon>frmExportForCustomerCompParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportParam.aspx.designer.vb">
+      <DependentUpon>frmExportParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportParam.aspx.vb">
+      <DependentUpon>frmExportParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmExportToSpe.aspx.designer.vb">
+      <DependentUpon>frmExportToSpe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmExportToSpe.aspx.vb">
+      <DependentUpon>frmExportToSpe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByDate.aspx.designer.vb">
+      <DependentUpon>frmRevByDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByDate.aspx.vb">
+      <DependentUpon>frmRevByDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByMovie.aspx.designer.vb">
+      <DependentUpon>frmRevByMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByMovie.aspx.vb">
+      <DependentUpon>frmRevByMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByScrn.aspx.designer.vb">
+      <DependentUpon>frmRevByScrn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByScrn.aspx.vb">
+      <DependentUpon>frmRevByScrn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByTheater.aspx.designer.vb">
+      <DependentUpon>frmRevByTheater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByTheater.aspx.vb">
+      <DependentUpon>frmRevByTheater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevByTheaterComp.aspx.designer.vb">
+      <DependentUpon>frmRevByTheaterComp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevByTheaterComp.aspx.vb">
+      <DependentUpon>frmRevByTheaterComp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevCompDetail.aspx.designer.vb">
+      <DependentUpon>frmRevCompDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevCompDetail.aspx.vb">
+      <DependentUpon>frmRevCompDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevDetail.aspx.designer.vb">
+      <DependentUpon>frmRevDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevDetail.aspx.vb">
+      <DependentUpon>frmRevDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRevenueMonitor.aspx.designer.vb">
+      <DependentUpon>frmRevenueMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRevenueMonitor.aspx.vb">
+      <DependentUpon>frmRevenueMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT.aspx.vb">
+      <DependentUpon>frmCTBV_AT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_AT_Add.aspx.vb">
+      <DependentUpon>frmCTBV_AT_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Login.aspx.vb">
+      <DependentUpon>frmCTBV_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu.aspx.vb">
+      <DependentUpon>frmCTBV_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_Menu_MMD.aspx.vb">
+      <DependentUpon>frmCTBV_Menu_MMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Movie.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Movie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Theater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmCTBV_MMD_Theater_Add.aspx.vb">
+      <DependentUpon>frmCTBV_MMD_Theater_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShow.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam.aspx.designer.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptBoxOfficeAndLateShowParam.aspx.vb">
+      <DependentUpon>frmRptBoxOfficeAndLateShowParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketSare.aspx.designer.vb">
+      <DependentUpon>frmRptCompMarketSare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketSare.aspx.vb">
+      <DependentUpon>frmRptCompMarketSare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketSareByCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptCompMarketSareByCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketSareByCircuit.aspx.vb">
+      <DependentUpon>frmRptCompMarketSareByCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketShareParam.aspx.designer.vb">
+      <DependentUpon>frmRptCompMarketShareParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptCompMarketShareParam.aspx.vb">
+      <DependentUpon>frmRptCompMarketShareParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSare.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSare.aspx.vb">
+      <DependentUpon>frmRptMarketSare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByCircuit.aspx.vb">
+      <DependentUpon>frmRptMarketSareByCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodDist.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodDist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodDist.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodDist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodNation.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodNation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodNation.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodNation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodParam.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodParam.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudio.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudio.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioCircuit.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioCircuitTheatre.aspx.designer.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioCircuitTheatre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketSareByPeriodStudioCircuitTheatre.aspx.vb">
+      <DependentUpon>frmRptMarketSareByPeriodStudioCircuitTheatre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptMarketShareParam.aspx.designer.vb">
+      <DependentUpon>frmRptMarketShareParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptMarketShareParam.aspx.vb">
+      <DependentUpon>frmRptMarketShareParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptParam.aspx.designer.vb">
+      <DependentUpon>frmRptParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptParam.aspx.vb">
+      <DependentUpon>frmRptParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPDABoxOfficeParam.aspx.designer.vb">
+      <DependentUpon>frmRptPDABoxOfficeParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPDABoxOfficeParam.aspx.vb">
+      <DependentUpon>frmRptPDABoxOfficeParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeek.aspx.designer.vb">
+      <DependentUpon>frmRptPerWeek.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeek.aspx.vb">
+      <DependentUpon>frmRptPerWeek.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekendParam.aspx.designer.vb">
+      <DependentUpon>frmRptPerWeekendParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekendParam.aspx.vb">
+      <DependentUpon>frmRptPerWeekendParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekendSunday.aspx.designer.vb">
+      <DependentUpon>frmRptPerWeekendSunday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekendSunday.aspx.vb">
+      <DependentUpon>frmRptPerWeekendSunday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekParam.aspx.designer.vb">
+      <DependentUpon>frmRptPerWeekParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptPerWeekParam.aspx.vb">
+      <DependentUpon>frmRptPerWeekParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat.aspx.vb">
+      <DependentUpon>frmRptSoundFormat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_fd.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_fd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_fd.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_fd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_ft.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_ft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_ft.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_ft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sd.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_sd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_sd.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_sd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_st.aspx.designer.vb">
+      <DependentUpon>frmRptSoundFormat_st.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptSoundFormat_st.aspx.vb">
+      <DependentUpon>frmRptSoundFormat_st.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByCircuit.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByCircuit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByCircuit.aspx.vb">
+      <DependentUpon>frmRptTrailerByCircuit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByCircuitParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByCircuitParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByCircuitParam.aspx.vb">
+      <DependentUpon>frmRptTrailerByCircuitParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByLocation.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByLocation.aspx.vb">
+      <DependentUpon>frmRptTrailerByLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByLocationParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByLocationParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByLocationParam.aspx.vb">
+      <DependentUpon>frmRptTrailerByLocationParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByPercent.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByPercent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByPercent.aspx.vb">
+      <DependentUpon>frmRptTrailerByPercent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByPercentParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByPercentParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByPercentParam.aspx.vb">
+      <DependentUpon>frmRptTrailerByPercentParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByTotalParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerByTotalParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerByTotalParam.aspx.vb">
+      <DependentUpon>frmRptTrailerByTotalParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerExeByWeek.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerExeByWeek.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerExeByWeek.aspx.vb">
+      <DependentUpon>frmRptTrailerExeByWeek.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerExeByWeekParam.aspx.designer.vb">
+      <DependentUpon>frmRptTrailerExeByWeekParam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptTrailerExeByWeekParam.aspx.vb">
+      <DependentUpon>frmRptTrailerExeByWeekParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\frmRptWeekendTrad.aspx.designer.vb">
+      <DependentUpon>frmRptWeekendTrad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRptWeekendTrad.aspx.vb">
+      <DependentUpon>frmRptWeekendTrad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\InfoPage.aspx.designer.vb">
+      <DependentUpon>InfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\InfoPage.aspx.vb">
+      <DependentUpon>InfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\SendRevenue.aspx.designer.vb">
+      <DependentUpon>SendRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SendRevenue.aspx.vb">
+      <DependentUpon>SendRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HttpFilterModule.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptBoxOffice.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBoxOffice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptExportBoxOffice.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptExportBoxOffice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptExportToSpe.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptExportToSpe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptRevby.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRevby.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptRevByDAte.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRevByDAte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptRevCom.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRevCom.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\test.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\TestRpt.vb">
+      <DependentUpon>TestRpt.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ViewReport.aspx.designer.vb">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewReport.aspx.vb">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Admin.css" />
+    <Content Include="Checker.css" />
+    <Content Include="DLL\GridViewUtils.dll" />
+    <Content Include="Form\frmCTBV_AT_ChangePassword.aspx" />
+    <Content Include="Form\frmCTBV_AT_SystemPolicies.aspx" />
+    <Content Include="Form\frmReportMovieMarketShare.aspx" />
+    <Content Include="Form\frmReportMovieMarketShareParam.aspx" />
+    <Content Include="Form\frmReportCheckerWage.aspx" />
+    <Content Include="Form\frmReportCheckerWageParam.aspx" />
+    <Content Include="Form\frmReportVirtualPrintFee.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShow2.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShow3.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShowParam2.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShowParam3.aspx" />
+    <Content Include="Form\frmVPF_Summary.aspx" />
+    <Content Include="Form\frmVPF_ManageMovieSet.aspx" />
+    <Content Include="Form\frmVPF_MovieDefaultSet.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Holiday.aspx" />
+    <Content Include="Form\frmVPF_ProblemRecord.aspx" />
+    <Content Include="Form\frmCTBV_Menu_VPF.aspx" />
+    <Content Include="Form\frmReportGeneralIndustryMarketShare.aspx" />
+    <Content Include="Form\frmReportGeneralIndustryMarketShareParam.aspx" />
+    <Content Include="Form\frmCTBV_Menu_Ticket.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie.aspx" />
+    <Content Include="Form\frmReportSummaryTicket.aspx" />
+    <Content Include="Form\frmReportSummaryTicketParam.aspx" />
+    <Content Include="Form\frmRevByDateComp.aspx" />
+    <Content Include="Form\frmRptSoundFormat_sfd.aspx" />
+    <Content Include="Form\frmRptSoundFormat_sft.aspx" />
+    <Content Include="Form\SendRevenue.aspx" />
+    <Content Include="images\ctbv.jpg" />
+    <Content Include="images\icon_accept.gif" />
+    <Content Include="images\icon_new.gif" />
+    <Content Include="images\icon_remove.gif" />
+    <Content Include="images\icon_wait.gif" />
+    <Content Include="images\MenuAdmin1.jpg" />
+    <Content Include="images\MenuAdmin1_disable.jpg" />
+    <Content Include="images\MenuAdmin2.jpg" />
+    <Content Include="images\MenuAdmin2_disable.jpg" />
+    <Content Include="images\MenuAdmin3.jpg" />
+    <Content Include="images\MenuAdmin3_disable.jpg" />
+    <Content Include="images\MenuAdmin4.jpg" />
+    <Content Include="images\MenuAdmin4_disable.jpg" />
+    <Content Include="images\MenuAdmin5.jpg" />
+    <Content Include="images\MenuAdmin5_disable.jpg" />
+    <Content Include="images\MenuAdmin7.jpg" />
+    <Content Include="images\MenuAdmin7_disable.jpg" />
+    <Content Include="images\MenuMain1.jpg" />
+    <Content Include="images\MenuMain1_disable.jpg" />
+    <Content Include="images\MenuMain2.jpg" />
+    <Content Include="images\MenuMain2_disable.jpg" />
+    <Content Include="images\MenuMain3.jpg" />
+    <Content Include="images\MenuMain3_disable.jpg" />
+    <Content Include="images\MenuMain4.jpg" />
+    <Content Include="images\MenuMain4_disable.jpg" />
+    <Content Include="images\MenuMain5.jpg" />
+    <Content Include="images\MenuMain5_disable.jpg" />
+    <Content Include="images\MenuMain6.jpg" />
+    <Content Include="images\MenuMain6_disable.jpg" />
+    <Content Include="images\MenuMaster1.jpg" />
+    <Content Include="images\MenuMaster1_disable.jpg" />
+    <Content Include="images\MenuMaster2.jpg" />
+    <Content Include="images\MenuMaster2_disable.jpg" />
+    <Content Include="images\MenuMaster3.jpg" />
+    <Content Include="images\MenuMaster3_disable.jpg" />
+    <Content Include="images\MenuMaster4.jpg" />
+    <Content Include="images\MenuMaster4_disable.jpg" />
+    <Content Include="images\MenuMaster5.jpg" />
+    <Content Include="images\MenuMaster5_disable.jpg" />
+    <Content Include="images\MenuMaster6.jpg" />
+    <Content Include="images\MenuMaster6_disable.jpg" />
+    <Content Include="images\MenuMaster7.jpg" />
+    <Content Include="images\MenuMaster7_disable.jpg" />
+    <Content Include="images\MenuTicket1.jpg" />
+    <Content Include="images\MenuTicket1_disable.jpg" />
+    <Content Include="images\MenuTicket2.jpg" />
+    <Content Include="images\MenuTicket2_disable.jpg" />
+    <Content Include="images\MenuTicket3.jpg" />
+    <Content Include="images\MenuTicket3_disable.jpg" />
+    <Content Include="images\MenuTicket4.jpg" />
+    <Content Include="images\MenuTicket4_disable.jpg" />
+    <Content Include="images\MenuTrailer1.jpg" />
+    <Content Include="images\MenuTrailer1_disable.jpg" />
+    <Content Include="images\MenuTrailer2.jpg" />
+    <Content Include="images\MenuTrailer2_disable.jpg" />
+    <Content Include="images\MenuTrailer3.jpg" />
+    <Content Include="images\MenuTrailer3_disable.jpg" />
+    <Content Include="images\MenuVPF.jpg" />
+    <Content Include="images\MenuVPFDefaultSet.jpg" />
+    <Content Include="images\MenuVPFDefaultSet_disable.jpg" />
+    <Content Include="images\MenuVPFManage.jpg" />
+    <Content Include="images\MenuVPFManage_disable.jpg" />
+    <Content Include="images\MenuVPFProblem.jpg" />
+    <Content Include="images\MenuVPFProblem_disable.jpg" />
+    <Content Include="images\MenuVPFSummary.jpg" />
+    <Content Include="images\MenuVPFSummary_disable.jpg" />
+    <Content Include="images\MenuVPF_disable.jpg" />
+    <Content Include="images\MenuWage1.jpg" />
+    <Content Include="images\MenuWage1_disable.jpg" />
+    <Content Include="images\MenuWage2.jpg" />
+    <Content Include="images\MenuWage2_disable.jpg" />
+    <Content Include="images\MenuWage3.jpg" />
+    <Content Include="images\MenuWage3_disable.jpg" />
+    <Content Include="images\MenuWage4.jpg" />
+    <Content Include="images\MenuWage4_disable.jpg" />
+    <Content Include="images\MenuWage5.jpg" />
+    <Content Include="images\MenuWage5_disable.jpg" />
+    <Content Include="images\MenuWage6.jpg" />
+    <Content Include="images\MenuWage6_disable.jpg" />
+    <Content Include="images\SDTLogo_2016.jpg" />
+    <Content Include="images\SDTMenu.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="images\Ticket Cap.png" />
+    <Content Include="images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="js\Duo-Web-v1.bundled.js" />
+    <Content Include="js\jquery-1.9.1.js" />
+    <Content Include="js\jquery-ui-1.10.3.custom.js" />
+    <Content Include="js\jquery-ui-1.10.4.css" />
+    <Content Include="js\Utils.js" />
+    <Content Include="Controls\Copyrights.ascx" />
+    <Content Include="Controls\DatePicker.ascx" />
+    <Content Include="Controls\MoviePopupSN.ascx" />
+    <Content Include="Controls\ctbvCtlTop.ascx" />
+    <Content Include="Controls\ctbvCtlTopLogin.ascx" />
+    <Content Include="Controls\ctlFooterMargin.ascx" />
+    <Content Include="Controls\Footer.ascx" />
+    <Content Include="Controls\Header.ascx" />
+    <Content Include="Controls\Movie1Popup.ascx" />
+    <Content Include="Controls\popUpCal.ascx" />
+    <Content Include="Controls\SelectColor.ascx" />
+    <Content Include="Controls\TheatrePopup.ascx" />
+    <Content Include="Controls\Trailer_Header_SetupPopup.ascx" />
+    <Content Include="default.aspx" />
+    <Content Include="DLL\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="Form\frmCTBV_MMD_FilmTypeSound.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FilmTypeSoundAdd.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FilmType.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FilmTypeAdd.aspx" />
+    <Content Include="Form\frmCTBV_MMD_FreeTicketAndPerCAP_Movie2.aspx" />
+    <Content Include="Form\frmCTBV_MMD_TicketType.aspx" />
+    <Content Include="Form\frmCTBV_MMD_TicketType_Movie.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShowEx.aspx" />
+    <Content Include="Form\frmCTBV_AT_LavelAndWage.aspx" />
+    <Content Include="Form\frmRptSoundFormatComp.aspx" />
+    <Content Include="Form\frmCTBV_AT_SetupDate.aspx" />
+    <Content Include="Form\frmCTBV_AT_SetupDate_Detail.aspx" />
+    <Content Include="Form\frmCTBV_AT_Session.aspx" />
+    <Content Include="Form\frmCTBV_AT_Config.aspx" />
+    <Content Include="Form\frmCTBV_AT_Former.aspx" />
+    <Content Include="Form\frmCTBV_AT_FormerAdd.aspx" />
+    <Content Include="Form\frmCTBV_AT_Present.aspx" />
+    <Content Include="Form\frmCTBV_AT_PresentAdd.aspx" />
+    <Content Include="Form\frmCTBV_AT_Level.aspx" />
+    <Content Include="Form\frmCTBV_AT_LevelAdd.aspx" />
+    <Content Include="Form\frmCTBV_MMD_StudioAdd.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Studio.aspx" />
+    <Content Include="Form\frmRptIndustryInfo.aspx" />
+    <Content Include="Form\frmRptIndustryInfoParam.aspx" />
+    <Content Include="Form\frmRptCompSoundFormat_sd.aspx" />
+    <Content Include="Form\frmRptCompSoundFormat_st.aspx" />
+    <Content Include="Form\frmRptCompSoundFormat.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodDistMovie.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodNationMovie.aspx" />
+    <Content Include="Form\frmRptOcp.aspx" />
+    <Content Include="Form\frmRptOcpParam.aspx" />
+    <Content Include="Form\frmRptSoundFormatBoxoffice.aspx" />
+    <Content Include="Form\frmRptTrailerByTotal.aspx" />
+    <Content Include="Form\frmRptTrailerViewership.aspx" />
+    <Content Include="Form\frmRptTrailerViewershipParam.aspx" />
+    <Content Include="Form\frmRptTheatreInformationCircuit.aspx" />
+    <Content Include="Form\frmRptTrailerByReleaseTheatre.aspx" />
+    <Content Include="Form\frmRptTrailerByReleaseCircuit.aspx" />
+    <Content Include="Form\frmRptTheatreInformation.aspx" />
+    <Content Include="Form\frmRptTheatreInformationParam.aspx" />
+    <Content Include="Form\frmRptTrailerByRelease.aspx" />
+    <Content Include="Form\frmRptTrailerByReleaseParam.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Disdistributor.aspx" />
+    <Content Include="Form\frmCTBV_MMD_DisdistributorAdd.aspx" />
+    <Content Include="Form\frmctbv_mmd_theater_seatprice.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodAllCircuit.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodAllTheatre.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodStudioC.aspx" />
+    <Content Include="Form\frmRptPDABoxOffice.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodStudioOnlyCircuitTheatre.aspx" />
+    <Content Include="Form\frmCTBV_AT_LateShow.aspx" />
+    <Content Include="Form\frmCTBV_AT_Message.aspx" />
+    <Content Include="Form\frmCTBV_AT_Main.aspx" />
+    <Content Include="Form\frmCTBV_AT_MessageNew.aspx" />
+    <Content Include="Form\frmCTBV_AT_MonitorStatus.aspx" />
+    <Content Include="Form\frmCTBV_Menu_Trailer.aspx" />
+    <Content Include="Form\frmCTBV_Menu_Trailer_Rpt.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Movie_Add.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Theatersub_Del.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Theater_Edit.aspx" />
+    <Content Include="Form\frmCTBV_RC_Menu.aspx" />
+    <Content Include="Form\frmCTBV_Trailer_Setup.aspx" />
+    <Content Include="Form\frmCTBV_Trailer_Setup_Detail.aspx" />
+    <Content Include="Form\frmCTBV_Trailer_Show.aspx" />
+    <Content Include="Form\frmCTBV_Trailer_Show_Detail.aspx" />
+    <Content Include="Form\frmCTBV_Unterminate.aspx" />
+    <Content Include="Form\frmExportForCustomer.aspx" />
+    <Content Include="Form\frmExportForCustomerComp.aspx" />
+    <Content Include="Form\frmExportForCustomerCompParam.aspx" />
+    <Content Include="Form\frmExportParam.aspx" />
+    <Content Include="Form\frmExportToSpe.aspx" />
+    <Content Include="Form\frmRevByDate.aspx" />
+    <Content Include="Form\frmRevByMovie.aspx" />
+    <Content Include="Form\frmRevByScrn.aspx" />
+    <Content Include="Form\frmRevByTheater.aspx" />
+    <Content Include="Form\frmRevByTheaterComp.aspx" />
+    <Content Include="Form\frmRevCompDetail.aspx" />
+    <Content Include="Form\frmRevDetail.aspx" />
+    <Content Include="Form\frmRevenueMonitor.aspx" />
+    <Content Include="Form\css\css.css" />
+    <Content Include="Form\frmCTBV_AT.aspx" />
+    <Content Include="Form\frmCTBV_AT_Add.aspx" />
+    <Content Include="Form\frmCTBV_Login.aspx" />
+    <Content Include="Form\frmCTBV_Menu.aspx" />
+    <Content Include="Form\frmCTBV_Menu_MMD.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Movie.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Theater.aspx" />
+    <Content Include="Form\frmCTBV_MMD_Theater_Add.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShow.aspx" />
+    <Content Include="Form\frmRptBoxOfficeAndLateShowParam.aspx" />
+    <Content Include="Form\frmRptCompMarketSare.aspx" />
+    <Content Include="Form\frmRptCompMarketSareByCircuit.aspx" />
+    <Content Include="Form\frmRptCompMarketShareParam.aspx" />
+    <Content Include="Form\frmRptMarketSare.aspx" />
+    <Content Include="Form\frmRptMarketSareByCircuit.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodDist.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodNation.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodParam.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodStudio.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodStudioCircuit.aspx" />
+    <Content Include="Form\frmRptMarketSareByPeriodStudioCircuitTheatre.aspx" />
+    <Content Include="Form\frmRptMarketShareParam.aspx" />
+    <Content Include="Form\frmRptParam.aspx" />
+    <Content Include="Form\frmRptPDABoxOfficeParam.aspx" />
+    <Content Include="Form\frmRptPerWeek.aspx" />
+    <Content Include="Form\frmRptPerWeekendParam.aspx" />
+    <Content Include="Form\frmRptPerWeekendSunday.aspx" />
+    <Content Include="Form\frmRptPerWeekParam.aspx" />
+    <Content Include="Form\frmRptSoundFormat.aspx" />
+    <Content Include="Form\frmRptSoundFormat_fd.aspx" />
+    <Content Include="Form\frmRptSoundFormat_ft.aspx" />
+    <Content Include="Form\frmRptSoundFormat_sd.aspx" />
+    <Content Include="Form\frmRptSoundFormat_st.aspx" />
+    <Content Include="Form\frmRptTrailerByCircuit.aspx" />
+    <Content Include="Form\frmRptTrailerByCircuitParam.aspx" />
+    <Content Include="Form\frmRptTrailerByLocation.aspx" />
+    <Content Include="Form\frmRptTrailerByLocationParam.aspx" />
+    <Content Include="Form\frmRptTrailerByPercent.aspx" />
+    <Content Include="Form\frmRptTrailerByPercentParam.aspx" />
+    <Content Include="Form\frmRptTrailerByTotalParam.aspx" />
+    <Content Include="Form\frmRptTrailerExeByWeek.aspx" />
+    <Content Include="Form\frmRptTrailerExeByWeekParam.aspx" />
+    <Content Include="Form\frmRptWeekendTrad.aspx" />
+    <Content Include="Form\InfoPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\AddCCC.png" />
+    <Content Include="images\AdminTools.jpg" />
+    <Content Include="images\AdminTools_bw.jpg" />
+    <Content Include="images\back1.gif" />
+    <Content Include="images\BackCCC.png" />
+    <Content Include="images\bg.gif" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bg7.jpg" />
+    <Content Include="images\bg_all.jpg" />
+    <Content Include="images\bg_all_02.jpg" />
+    <Content Include="images\bg_II.gif" />
+    <Content Include="images\bg_III.gif" />
+    <Content Include="images\BoxOffice.jpg" />
+    <Content Include="images\BoxOffice_bw.jpg" />
+    <Content Include="images\calendar.jpg" />
+    <Content Include="images\calendar_01.jpg" />
+    <Content Include="images\calendar_02.jpg" />
+    <Content Include="images\CancelCCC.png" />
+    <Content Include="images\Checker-Level.jpg" />
+    <Content Include="images\Checker-Level_bw.jpg" />
+    <Content Include="images\Checker-Movie-Setup.jpg" />
+    <Content Include="images\Checker-Movie-Setup_bw.jpg" />
+    <Content Include="images\checkerLevelAndWage.png" />
+    <Content Include="images\checkerLevelAndWageGray.png" />
+    <Content Include="images\Collect-Report-Config-by-Session.jpg" />
+    <Content Include="images\Collect-Report-Config-by-Session_bw.jpg" />
+    <Content Include="images\Collect-Report-Config.jpg" />
+    <Content Include="images\Collect-Report-Config_bw.jpg" />
+    <Content Include="images\CTBVLOGO.jpg" />
+    <Content Include="images\CTBVREPORTCENTER.jpg" />
+    <Content Include="images\CTBVREPORTCENTER_BW.jpg" />
+    <Content Include="images\CTBV_LOGO.jpg" />
+    <Content Include="images\CTBV_LOGO_2.jpg" />
+    <Content Include="images\DeleteCCC.png" />
+    <Content Include="images\disabled.png" />
+    <Content Include="images\Disney_logo.bmp" />
+    <Content Include="images\Disney_logo.jpg" />
+    <Content Include="images\dist.jpg" />
+    <Content Include="images\distGray.jpg" />
+    <Content Include="images\EditCCC.png" />
+    <Content Include="images\EditS.png" />
+    <Content Include="images\exit.jpg" />
+    <Content Include="images\Exit.png" />
+    <Content Include="images\exit_bw.jpg" />
+    <Content Include="images\Former-Wage.jpg" />
+    <Content Include="images\Former-Wage_bw.jpg" />
+    <Content Include="images\inventory.jpg" />
+    <Content Include="images\inventory_bw.jpg" />
+    <Content Include="images\LateShowConfig.jpg" />
+    <Content Include="images\LateShowConfigGray.jpg" />
+    <Content Include="images\Logo_all.jpg" />
+    <Content Include="images\Logo_all_2.jpg" />
+    <Content Include="images\logo_columbia.gif" />
+    <Content Include="images\MagnageMasterData.jpg" />
+    <Content Include="images\MagnageMasterData_bw.jpg" />
+    <Content Include="images\MessageToPda.jpg" />
+    <Content Include="images\MessageToPdaGray.jpg" />
+    <Content Include="images\MMD-Studio.jpg" />
+    <Content Include="images\MMD-Studio_bw.jpg" />
+    <Content Include="images\monitorBoxOffice.jpg" />
+    <Content Include="images\monitorBoxOfficeGray.jpg" />
+    <Content Include="images\Movies.jpg" />
+    <Content Include="images\MoviesGray.jpg" />
+    <Content Include="images\NewCCC.png" />
+    <Content Include="images\next1.gif" />
+    <Content Include="images\Piont.gif" />
+    <Content Include="images\Present-Wage.jpg" />
+    <Content Include="images\Present-Wage_bw.jpg" />
+    <Content Include="images\SaveCCC.png" />
+    <Content Include="images\SDT.jpg" />
+    <Content Include="images\SDTHeader.png" />
+    <Content Include="images\SDTLogo.jpg" />
+    <Content Include="images\search.gif" />
+    <Content Include="images\search1.png" />
+    <Content Include="images\SearchCCC.png" />
+    <Content Include="images\select_color.gif" />
+    <Content Include="images\select_color.jpg" />
+    <Content Include="images\Thearter.jpg" />
+    <Content Include="images\ThearterGray.jpg" />
+    <Content Include="images\trailer.jpg" />
+    <Content Include="images\trailerFromCheckerNew.jpg" />
+    <Content Include="images\trailerFromCheckerNewGray.jpg" />
+    <Content Include="images\trailerReport.jpg" />
+    <Content Include="images\trailerReportGray.jpg" />
+    <Content Include="images\trailerSetup1.jpg" />
+    <Content Include="images\trailerSetup1Gray.jpg" />
+    <Content Include="images\Trailer_bw.jpg" />
+    <Content Include="images\UpdateCCC.png" />
+    <Content Include="images\Usersetting.jpg" />
+    <Content Include="images\Usersetting_bw.jpg" />
+    <Content Include="images\WageBySessionConfig.png" />
+    <Content Include="images\WageBySessionConfigGray.png" />
+    <Content Include="images\Weekly-Movie-Setup.png" />
+    <Content Include="images\Weekly-Movie-SetupGray.png" />
+    <Content Include="js\ColorPicker2.js" />
+    <Content Include="js\Common.js" />
+    <Content Include="js\tigra_calendar\img\cal.gif" />
+    <Content Include="js\tigra_calendar\img\next_mon.gif" />
+    <Content Include="js\tigra_calendar\img\next_year.gif" />
+    <Content Include="js\tigra_calendar\img\no_cal.gif" />
+    <Content Include="js\tigra_calendar\img\prev_mon.gif" />
+    <Content Include="js\tigra_calendar\img\prev_year.gif" />
+    <Content Include="js\tigra_calendar\tcal.css" />
+    <Content Include="js\tigra_calendar\tcal.js" />
+    <Content Include="Report\ViewReport.aspx" />
+    <Content Include="Role.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Role.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Styles.css" />
+    <Content Include="UserProfile.aspx" />
+    <EmbeddedResource Include="Controls\ctbvCtlTop.ascx.resx">
+      <DependentUpon>ctbvCtlTop.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctbvCtlTopLogin.ascx.resx">
+      <DependentUpon>ctbvCtlTopLogin.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctlFooterMargin.ascx.resx">
+      <DependentUpon>ctlFooterMargin.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Footer.ascx.resx">
+      <DependentUpon>Footer.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Header.ascx.resx">
+      <DependentUpon>Header.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_Menu_VPF.aspx.resx">
+      <DependentUpon>frmCTBV_Menu_VPF.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_Menu_Ticket.aspx.resx">
+      <DependentUpon>frmCTBV_Menu_Ticket.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_AT_Message.aspx.resx">
+      <DependentUpon>frmCTBV_AT_Message.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_AT.aspx.resx">
+      <DependentUpon>frmCTBV_AT.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_Login.aspx.resx">
+      <DependentUpon>frmCTBV_Login.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_Menu.aspx.resx">
+      <DependentUpon>frmCTBV_Menu.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_Menu_MMD.aspx.resx">
+      <DependentUpon>frmCTBV_Menu_MMD.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_MMD_Movie.aspx.resx">
+      <DependentUpon>frmCTBV_MMD_Movie.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_MMD_Theater.aspx.resx">
+      <DependentUpon>frmCTBV_MMD_Theater.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_MMD_Theater_Add.aspx.resx">
+      <DependentUpon>frmCTBV_MMD_Theater_Add.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCTBV_MMD_Theater_Edit.aspx.resx">
+      <DependentUpon>frmCTBV_MMD_Theater_Edit.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptBoxOffice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBoxOffice.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptExportBoxOffice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptExportBoxOffice.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptExportToSpe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptExportToSpe.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptRevby.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRevby.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptRevByDAte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRevByDAte.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptRevCom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRevCom.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>test.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TestRpt.resx">
+      <DependentUpon>TestRpt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TestRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile.aspx.resx">
+      <DependentUpon>UserProfile.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Form\CheckerTransaction.Master" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Role.xsc">
+      <DependentUpon>Role.xsd</DependentUpon>
+    </None>
+    <None Include="Role.xss">
+      <DependentUpon>Role.xsd</DependentUpon>
+    </None>
+    <None Include="Role.xsx">
+      <DependentUpon>Role.xsd</DependentUpon>
+    </None>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDTCommon\SDTCommon.vbproj">
+      <Project>{729173D6-B377-4A94-B494-7982A3F913C6}</Project>
+      <Name>SDTCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>42424</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CTBVMIS</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

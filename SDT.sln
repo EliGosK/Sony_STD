@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDT", "SDT\SDT.vbproj", "{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDTCommon", "SDTCommon\SDTCommon.vbproj", "{729173D6-B377-4A94-B494-7982A3F913C6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDTAdmin", "SDTAdmin\SDTAdmin.vbproj", "{690F8B19-C4A8-4497-B462-D8E3DBB80F53}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SDT\\SDT.vbproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = SDT\\
+		SccProjectUniqueName2 = SDTAdmin\\SDTAdmin.vbproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = SDTAdmin\\
+		SccProjectUniqueName3 = SDTCommon\\SDTCommon.vbproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = SDTCommon\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729173D6-B377-4A94-B494-7982A3F913C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729173D6-B377-4A94-B494-7982A3F913C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729173D6-B377-4A94-B494-7982A3F913C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729173D6-B377-4A94-B494-7982A3F913C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690F8B19-C4A8-4497-B462-D8E3DBB80F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690F8B19-C4A8-4497-B462-D8E3DBB80F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690F8B19-C4A8-4497-B462-D8E3DBB80F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690F8B19-C4A8-4497-B462-D8E3DBB80F53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

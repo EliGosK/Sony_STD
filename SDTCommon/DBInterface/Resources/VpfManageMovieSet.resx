@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CopyRow" xml:space="preserve">
+    <value>DECLARE @newSetNo AS INT;
+
+SELECT @newSetNo = MAX(mms.set_no) + 1
+FROM tblVPF_ManageMovieSet AS mms
+WHERE mms.theater_id = @theater_id
+	AND mms.movie_id = @movie_id
+	AND mms.film_type_sound_id = @film_type_sound_id
+GROUP BY mms.theater_id
+	, mms.movie_id
+	, mms.film_type_sound_id;
+
+INSERT INTO tblVPF_ManageMovieSet
+SELECT mms.theater_id
+	, mms.movie_id
+	, mms.film_type_sound_id
+	, @newSetNo
+	, mms.vpf_start_date
+	, mms.set_days
+	, mms.set_sessions
+	, mms.set_price
+	, NULL
+	, NULL
+	, @cvDate
+	, @update_by
+FROM tblVPF_ManageMovieSet AS mms
+WHERE mms.theater_id = @theater_id
+	AND mms.movie_id = @movie_id
+	AND mms.film_type_sound_id = @film_type_sound_id
+	AND mms.set_no = @set_no;</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>DELETE
+FROM tblVPF_ManageMovieSet
+WHERE theater_id = @theater_id  
+	AND movie_id = @movie_id
+	AND film_type_sound_id = @film_type_sound_id
+	AND set_no = @set_no;
+
+UPDATE mms
+SET set_no = newNo.new_set_no
+FROM tblVPF_ManageMovieSet AS mms
+INNER JOIN (
+	SELECT ROW_NUMBER() OVER (
+			PARTITION BY mms.movie_id
+			, theater_id
+			, film_type_sound_id ORDER BY ISNULL(mms.actual_price, 0) DESC, mms.vpf_start_date, mms.set_days
+			) AS new_set_no
+		, mms.*
+	FROM tblVPF_ManageMovieSet AS mms
+	WHERE theater_id = @theater_id
+		AND movie_id = @movie_id
+		AND film_type_sound_id = @film_type_sound_id
+	) AS newNo
+	ON newNo.movie_id = mms.movie_id
+		AND newNo.theater_id = mms.theater_id
+		AND newNo.film_type_sound_id = mms.film_type_sound_id
+		AND newNo.set_no = mms.set_no;</value>
+  </data>
+  <data name="LoadDefaultSet" xml:space="preserve">
+    <value>SELECT t.circuit_id
+	, tft.theater_id
+	, vmd.movie_id
+	, vmd.film_type_sound_id
+	, 1 AS set_no
+	, vmd.sets_amount
+	, vmd.vpf_start_date
+	, vmd.set_days
+	, vmd.set_sessions
+	, vmd.set_price
+	, @cvDate AS update_date
+	, @update_by AS update_by
+INTO #tmp
+FROM (
+	SELECT vmd.movie_id
+		, MAX(vmd.circuit_id) AS circuit_id
+		, vmd.film_type_sound_id
+	FROM tblVPF_MovieDefaultSet AS vmd
+	WHERE (
+			@movie_id IS NULL
+			OR vmd.movie_id = @movie_id
+			)
+		AND (
+			@circuit_id IS NULL
+			OR (
+				vmd.circuit_id = @circuit_id
+				OR vmd.circuit_id = - 1
+				)
+			)
+	GROUP BY vmd.movie_id
+		, vmd.film_type_sound_id
+	) AS filter
+INNER JOIN tblVPF_MovieDefaultSet AS vmd
+	ON vmd.movie_id = filter.movie_id
+		AND vmd.circuit_id = filter.circuit_id
+		AND vmd.film_type_sound_id = filter.film_type_sound_id
+INNER JOIN tblFilmTypeSound AS fts
+	ON fts.film_type_sound_id = vmd.film_type_sound_id
+		AND fts.status_flag = 1
+INNER JOIN tblTheaterFilmType AS tft
+	ON tft.film_type_id = fts.film_type_id
+		AND tft.status_flag = 1
+INNER JOIN tblTheater AS t
+	ON t.theater_id = tft.theater_id
+	AND t.circuit_id = CASE WHEN filter.circuit_id = -1 THEN @circuit_id ELSE filter.circuit_id END
+LEFT JOIN tblVPF_ManageMovieSet AS mms
+	ON mms.theater_id = tft.theater_id
+		AND mms.movie_id = vmd.movie_id
+		AND mms.film_type_sound_id = vmd.film_type_sound_id
+WHERE mms.theater_id IS NULL
+	AND (@theater_id iS NULL OR tft.theater_id = @theater_id);
+
+WHILE EXISTS (
+		SELECT TOP 1 1
+		FROM #tmp
+		WHERE set_no &lt; sets_amount
+		)
+BEGIN
+	INSERT INTO #tmp
+	SELECT circuit_id
+		, theater_id
+		, movie_id
+		, film_type_sound_id
+		, sets_amount AS set_no
+		, sets_amount AS sets_amount
+		, vpf_start_date
+		, set_days
+		, set_sessions
+		, set_price
+		, update_date
+		, update_by
+	FROM #tmp
+	WHERE set_no &lt; sets_amount;
+
+	UPDATE #tmp
+	SET sets_amount = sets_amount - 1
+	WHERE set_no &lt; sets_amount;
+END
+
+INSERT INTO tblVPF_ManageMovieSet
+SELECT theater_id
+	, movie_id
+	, film_type_sound_id
+	, set_no
+	, vpf_start_date
+	, set_days
+	, set_sessions
+	, set_price
+	, NULL AS user_price
+	, NULL AS user_remark
+	, update_date
+	, update_by
+FROM #tmp;
+
+DROP TABLE #tmp;</value>
+  </data>
+  <data name="SelectData" xml:space="preserve">
+    <value>SELECT mms.theater_id
+	, mms.movie_id
+	, mms.film_type_sound_id
+	, mms.set_no
+	, mms.vpf_start_date
+	, mms.set_days
+	, mms.set_sessions
+	, mms.set_price
+	, mms.actual_price
+	, mms.user_remark
+	, mms.update_date
+	, mms.update_by
+	, t.theater_name
+	, fts.film_type_sound_header_group
+	, u.user_name
+FROM tblVPF_ManageMovieSet AS mms
+INNER JOIN tblFilmTypeSound AS fts
+	ON fts.film_type_sound_id = mms.film_type_sound_id
+INNER JOIN tblTheater AS t
+	ON t.theater_id = mms.theater_id
+INNER JOIN tblUser AS u
+	ON u.user_id = mms.update_by</value>
+  </data>
+  <data name="UpdateInsert" xml:space="preserve">
+    <value>UPDATE tblVPF_ManageMovieSet
+SET vpf_start_date = @vpf_start_date
+	, set_days = @set_days
+	, set_sessions = @set_sessions
+	, set_price = @set_price
+	, actual_price = @actual_price
+	, user_remark = @user_remark
+	, update_date = @cvDate
+	, update_by = @update_by
+WHERE theater_id = @theater_id
+	AND movie_id = @movie_id
+	AND film_type_sound_id = @film_type_sound_id
+	AND set_no = @set_no;
+
+IF @@ROWCOUNT = 0
+BEGIN
+	INSERT INTO tblVPF_ManageMovieSet (
+		theater_id
+		, movie_id
+		, film_type_sound_id
+		, set_no
+		, vpf_start_date
+		, set_days
+		, set_sessions
+		, set_price
+		, actual_price
+		, user_remark
+		, update_date
+		, update_by
+		)
+	VALUES (
+		@theater_id
+		, @movie_id
+		, @film_type_sound_id
+		, @set_no
+		, @vpf_start_date
+		, @set_days
+		, @set_sessions
+		, @set_price
+		, @actual_price
+		, @user_remark
+		, @cvDate
+		, @update_by
+		);
+END</value>
+  </data>
+  <data name="UpdatePayment" xml:space="preserve">
+    <value>UPDATE tblVPF_ManageMovieSet
+SET actual_price = @actual_price
+	, user_remark = @user_remark
+	, update_date = @cvDate
+	, update_by = @update_by
+WHERE theater_id = @theater_id
+	AND movie_id = @movie_id
+	AND film_type_sound_id = @film_type_sound_id
+	AND set_no = @set_no;</value>
+  </data>
+</root>

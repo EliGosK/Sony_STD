@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SelectDailyRevenue" xml:space="preserve">
+    <value>SELECT
+	rv.movies_id AS movie_id
+	, SUM(rv.revenue_amount) AS sum_revenue
+	, CASE WHEN MAX(rv.status_id) &lt; 3 THEN 1 ELSE 0 END AS is_complete
+FROM tblRevenue AS rv
+INNER JOIN tblMovie AS m
+ON m.movie_id = rv.movies_id
+	AND m.movietype_id = 1
+WHERE rv.theater_id = @theater_id
+	AND rv.revenue_date = @revenue_date
+GROUP BY rv.movies_id
+
+UNION
+
+SELECT
+	rch.movie_id
+	, SUM(rch.all_amount) AS sum_revenue
+	, CASE WHEN MAX(rch.status_id) &lt; 3 THEN 1 ELSE 0 END AS is_complete
+FROM tblRevenueCompHeader AS rch
+INNER JOIN tblMovie AS m
+	ON m.movie_id = rch.movie_id
+	AND m.movietype_id = 2
+WHERE rch.theater_id = @theater_id
+	AND rch.revenue_date = @revenue_date
+GROUP BY rch.movie_id
+;</value>
+  </data>
+  <data name="SelectFreeTicketCapMoviePrice" xml:space="preserve">
+    <value>DECLARE @name_list AS NVARCHAR(MAX);
+DECLARE @sql AS NVARCHAR(MAX);
+SET @name_list = '';
+	
+IF @screen_id IS NOT NULL AND @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+			AND rv.theatersub_id = @screen_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.revenue_date
+				, ft.ticket_cap_name
+				, SUM(CASE WHEN rv.revenue_date &gt; ftcm.available_to THEN 0 ELSE ftrd.quantity * ftrd.price END) AS price
+			FROM tblRevenue rv
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCapByMovie AS ftcm
+				ON ftcm.movie_id = rv.movies_id
+				AND ftcm.ticket_cap_id = ftrd.ticket_cap_id
+				AND ftcm.theater_id = rv.theater_id
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '
+				AND rv.theatersub_id = ' + CONVERT(VARCHAR(MAX), @screen_id) + '
+			GROUP BY
+				rv.revenue_date
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(price) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE IF @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.theatersub_id
+				, ft.ticket_cap_name
+				, SUM(CASE WHEN rv.revenue_date &gt; ftcm.available_to THEN 0 ELSE ftrd.quantity * ftrd.price END) AS price
+			FROM tblRevenue rv
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCapByMovie AS ftcm
+				ON ftcm.movie_id = rv.movies_id
+				AND ftcm.ticket_cap_id = ftrd.ticket_cap_id
+				AND ftcm.theater_id = rv.theater_id
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '				
+			GROUP BY
+				rv.theatersub_id
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(price) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE IF @circuit_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND t.circuit_id = @circuit_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				t.theater_id
+				, ft.ticket_cap_name
+				, SUM(CASE WHEN rv.revenue_date &gt; ftcm.available_to THEN 0 ELSE ftrd.quantity * ftrd.price END) AS price
+			FROM tblRevenue rv
+			INNER JOIN tblTheater t
+				ON t.theater_id = rv.theater_id
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCapByMovie AS ftcm
+				ON ftcm.movie_id = rv.movies_id
+				AND ftcm.ticket_cap_id = ftrd.ticket_cap_id
+				AND ftcm.theater_id = rv.theater_id
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND t.circuit_id = ' + CONVERT(VARCHAR(MAX), @circuit_id) + '
+			GROUP BY
+				t.theater_id
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(price) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE
+BEGIN
+	SELECT 
+		t.circuit_id
+		, SUM(CASE WHEN rv.revenue_date &gt; ftcm.available_to THEN 0 ELSE ftrd.quantity * ftrd.price END) AS [Per Cap Usage]
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	INNER JOIN tblFreeTicketAndCapByMovie AS ftcm
+		ON ftcm.movie_id = rv.movies_id
+		AND ftcm.ticket_cap_id = ftrd.ticket_cap_id
+		AND ftcm.theater_id = rv.theater_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+	GROUP BY
+		t.circuit_id
+	;
+END</value>
+  </data>
+  <data name="SelectFreeTicketCapMovieViewer" xml:space="preserve">
+    <value>DECLARE @name_list AS NVARCHAR(MAX);
+DECLARE @sql AS NVARCHAR(MAX);
+SET @name_list = '';
+	
+IF @screen_id IS NOT NULL AND @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+			AND rv.theatersub_id = @screen_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.revenue_date
+				, ft.ticket_cap_name
+				, SUM(ftrd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '
+				AND rv.theatersub_id = ' + CONVERT(VARCHAR(MAX), @screen_id) + '
+			GROUP BY
+				rv.revenue_date
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE IF @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.theatersub_id
+				, ft.ticket_cap_name
+				, SUM(ftrd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '				
+			GROUP BY
+				rv.theatersub_id
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE IF @circuit_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_cap_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			ft.ticket_cap_name
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND t.circuit_id = @circuit_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				t.theater_id
+				, ft.ticket_cap_name
+				, SUM(ftrd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblTheater t
+				ON t.theater_id = rv.theater_id
+			INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+				ON ftrd.revenue_id = rv.revenueid
+			INNER JOIN tblFreeTicketAndCap AS ft
+				ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND t.circuit_id = ' + CONVERT(VARCHAR(MAX), @circuit_id) + '
+			GROUP BY
+				t.theater_id
+				, ft.ticket_cap_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_cap_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+
+		EXEC (@sql);
+	END
+END
+ELSE
+BEGIN
+	SELECT 
+		t.circuit_id
+		, SUM(ftrd.quantity) AS [Per Cap Usage]
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	INNER JOIN tblFreeTicketAndCapByMovie AS ftcm
+		ON ftcm.movie_id = rv.movies_id
+		AND ftcm.ticket_cap_id = ftrd.ticket_cap_id
+		AND ftcm.theater_id = rv.theater_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+	GROUP BY
+		t.circuit_id
+	;
+END</value>
+  </data>
+  <data name="SelectReportFreeTicket" xml:space="preserve">
+    <value>IF @screen_id IS NOT NULL AND @theater_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.revenue_date
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+		
+		, ISNULL(SUM(ftrd.free_ticket_quantity), 0) AS free_ticket_quantity
+		, ISNULL(SUM(ftrd.free_ticket_price), 0) AS free_ticket_price
+			
+		, ISNULL(SUM(ftrh.free_ticket_norm_count), 0) AS free_ticket_norm_count
+		, ISNULL(SUM(ftrh.free_ticket_special_count), 0) AS free_ticket_special_count
+		
+		, ISNULL(SUM(ftrh.free_more_5_count), 0) AS free_more_5_count
+		, ISNULL(SUM(ftrh.free_more_5_sum), 0) AS free_more_5_sum
+	FROM tblRevenue rv
+	LEFT JOIN tblFreeTicketAndCapRevenueHeader AS ftrh
+		ON ftrh.revenue_id = rv.revenueid
+	LEFT JOIN
+	(
+		SELECT
+			rv.revenueid AS revenue_id
+			, ISNULL(SUM(ftrd.quantity), 0) AS free_ticket_quantity
+			, ISNULL(SUM(ftrd.price), 0) AS free_ticket_price
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			AND ft.ticket_cap_name = 'บัตรฟรีคิดเงิน'
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+			AND rv.theatersub_id = @screen_id
+		GROUP BY
+			rv.revenueid
+	) ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND rv.theater_id = @theater_id
+		AND rv.theatersub_id = @screen_id
+	GROUP BY
+		rv.revenue_date
+	ORDER BY
+		rv.revenue_date
+END
+ELSE IF @theater_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.theatersub_id
+		, scr.theatersub_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+		
+		, ISNULL(SUM(ftrd.free_ticket_quantity), 0) AS free_ticket_quantity
+		, ISNULL(SUM(ftrd.free_ticket_price), 0) AS free_ticket_price
+			
+		, ISNULL(SUM(ftrh.free_ticket_norm_count), 0) AS free_ticket_norm_count
+		, ISNULL(SUM(ftrh.free_ticket_special_count), 0) AS free_ticket_special_count
+		
+		, ISNULL(SUM(ftrh.free_more_5_count), 0) AS free_more_5_count
+		, ISNULL(SUM(ftrh.free_more_5_sum), 0) AS free_more_5_sum
+	FROM tblRevenue rv
+	INNER JOIN tblTheaterSub scr
+		ON scr.theater_id = rv.theater_id
+		AND scr.theatersub_id = rv.theatersub_id
+	LEFT JOIN tblFreeTicketAndCapRevenueHeader AS ftrh
+		ON ftrh.revenue_id = rv.revenueid
+	LEFT JOIN
+	(
+		SELECT
+			rv.revenueid AS revenue_id
+			, ISNULL(SUM(ftrd.quantity), 0) AS free_ticket_quantity
+			, ISNULL(SUM(ftrd.price), 0) AS free_ticket_price
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			AND ft.ticket_cap_name = 'บัตรฟรีคิดเงิน'
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+		GROUP BY
+			rv.revenueid
+	) ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND rv.theater_id = @theater_id
+	GROUP BY
+		rv.theatersub_id
+		, scr.theatersub_name
+	ORDER BY
+		rv.theatersub_id
+		, scr.theatersub_name
+END
+ELSE IF @circuit_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.theater_id
+		, t.theater_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+		
+		, ISNULL(SUM(ftrd.free_ticket_quantity), 0) AS free_ticket_quantity
+		, ISNULL(SUM(ftrd.free_ticket_price), 0) AS free_ticket_price
+			
+		, ISNULL(SUM(ftrh.free_ticket_norm_count), 0) AS free_ticket_norm_count
+		, ISNULL(SUM(ftrh.free_ticket_special_count), 0) AS free_ticket_special_count
+		
+		, ISNULL(SUM(ftrh.free_more_5_count), 0) AS free_more_5_count
+		, ISNULL(SUM(ftrh.free_more_5_sum), 0) AS free_more_5_sum
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	LEFT JOIN tblFreeTicketAndCapRevenueHeader AS ftrh
+		ON ftrh.revenue_id = rv.revenueid
+	LEFT JOIN
+	(
+		SELECT
+			rv.revenueid AS revenue_id
+			, ISNULL(SUM(ftrd.quantity), 0) AS free_ticket_quantity
+			, ISNULL(SUM(ftrd.price), 0) AS free_ticket_price
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			AND ft.ticket_cap_name = 'บัตรฟรีคิดเงิน'
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND t.circuit_id = @circuit_id
+		GROUP BY
+			rv.revenueid
+	) ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND t.circuit_id = @circuit_id
+	GROUP BY
+		rv.theater_id
+		, t.theater_name
+	ORDER BY
+		rv.theater_id
+		, t.theater_name
+END
+ELSE
+BEGIN
+	SELECT
+		c.circuit_id
+		, c.circuit_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+		
+		, ISNULL(SUM(ftrd.free_ticket_quantity), 0) AS free_ticket_quantity
+		, ISNULL(SUM(ftrd.free_ticket_price), 0) AS free_ticket_price
+			
+		, ISNULL(SUM(ftrh.free_ticket_norm_count), 0) AS free_ticket_norm_count
+		, ISNULL(SUM(ftrh.free_ticket_special_count), 0) AS free_ticket_special_count
+		
+		, ISNULL(SUM(ftrh.free_more_5_count), 0) AS free_more_5_count
+		, ISNULL(SUM(ftrh.free_more_5_sum), 0) AS free_more_5_sum
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	INNER JOIN tblCircuit c
+		ON c.circuit_id = t.circuit_id
+	LEFT JOIN tblFreeTicketAndCapRevenueHeader AS ftrh
+		ON ftrh.revenue_id = rv.revenueid
+	LEFT JOIN
+	(
+		SELECT
+			rv.revenueid AS revenue_id
+			, ISNULL(SUM(ftrd.quantity), 0) AS free_ticket_quantity
+			, ISNULL(SUM(ftrd.price), 0) AS free_ticket_price
+		FROM tblRevenue rv
+		INNER JOIN tblFreeTicketAndCapRevenueDetail AS ftrd
+			ON ftrd.revenue_id = rv.revenueid
+		INNER JOIN tblFreeTicketAndCap AS ft
+			ON ft.ticket_cap_id = ftrd.ticket_cap_id
+			AND ft.ticket_cap_name = 'บัตรฟรีคิดเงิน'
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+		GROUP BY
+			rv.revenueid
+	) ftrd
+		ON ftrd.revenue_id = rv.revenueid
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+	GROUP BY
+		c.circuit_id
+		, c.circuit_name
+	ORDER BY
+		c.circuit_id
+END
+;</value>
+  </data>
+  <data name="SelectRevenueMovie" xml:space="preserve">
+    <value>IF @screen_id IS NOT NULL AND @theater_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.revenue_date
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+	FROM tblRevenue rv
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND rv.theater_id = @theater_id
+		AND rv.theatersub_id = @screen_id
+	GROUP BY
+		rv.revenue_date
+	ORDER BY
+		rv.revenue_date
+END
+ELSE IF @theater_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.theatersub_id
+		, scr.theatersub_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+	FROM tblRevenue rv
+	INNER JOIN tblTheaterSub scr
+		ON scr.theater_id = rv.theater_id
+		AND scr.theatersub_id = rv.theatersub_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND rv.theater_id = @theater_id
+	GROUP BY
+		rv.theatersub_id
+		, scr.theatersub_name
+	ORDER BY
+		rv.theatersub_id
+		, scr.theatersub_name
+END
+ELSE IF @circuit_id IS NOT NULL
+BEGIN
+	SELECT
+		rv.theater_id
+		, t.theater_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+		AND t.circuit_id = @circuit_id
+	GROUP BY
+		rv.theater_id
+		, t.theater_name
+	ORDER BY
+		t.theater_name
+END
+ELSE
+BEGIN
+	SELECT
+		c.circuit_id
+		, c.circuit_name
+		, SUM(rv.revenue_amount_no_cap) AS revenue_report
+		, SUM(rv.revenue_adms_with_free_ticket) AS viewer_report
+		, SUM(rv.revenue_amount) AS revenue_actual
+		, SUM(rv.revenue_adms) AS viewer_actual
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	INNER JOIN tblCircuit c
+		ON c.circuit_id = t.circuit_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+	GROUP BY
+		c.circuit_id
+		, c.circuit_name
+	ORDER BY
+		c.circuit_id
+END
+;</value>
+  </data>
+  <data name="SelectTicketTypeMovie" xml:space="preserve">
+    <value>DECLARE @name_list AS NVARCHAR(MAX);
+DECLARE @sql AS NVARCHAR(MAX);
+
+SET @name_list = '';
+
+IF @screen_id IS NOT NULL AND @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_type_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			tt.ticket_type_name
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblTicketTypeRevenueDetail ttd
+			ON ttd.revenue_id = rv.revenueid
+		INNER JOIN tblTicketType tt
+			ON tt.ticket_type_id = ttd.ticket_type_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+			AND rv.theatersub_id = @screen_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.revenue_date
+				, tt.ticket_type_name
+				, SUM(ttd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblTheater t
+				ON t.theater_id = rv.theater_id
+			INNER JOIN tblTicketTypeRevenueDetail ttd
+				ON ttd.revenue_id = rv.revenueid
+			INNER JOIN tblTicketType tt
+				ON tt.ticket_type_id = ttd.ticket_type_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '
+				AND rv.theatersub_id = ' + CONVERT(VARCHAR(MAX), @screen_id) + '
+			GROUP BY
+				rv.revenue_date
+				, tt.ticket_type_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_type_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+		EXEC (@sql);
+	END
+END
+ELSE IF @theater_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_type_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			tt.ticket_type_name
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblTicketTypeRevenueDetail ttd
+			ON ttd.revenue_id = rv.revenueid
+		INNER JOIN tblTicketType tt
+			ON tt.ticket_type_id = ttd.ticket_type_id
+		WHERE rv.movies_id = @movie_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+			AND rv.theater_id = @theater_id
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				rv.theatersub_id
+				, tt.ticket_type_name
+				, SUM(ttd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblTheater t
+				ON t.theater_id = rv.theater_id
+			INNER JOIN tblTicketTypeRevenueDetail ttd
+				ON ttd.revenue_id = rv.revenueid
+			INNER JOIN tblTicketType tt
+				ON tt.ticket_type_id = ttd.ticket_type_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND rv.theater_id = ' + CONVERT(VARCHAR(MAX), @theater_id) + '
+			GROUP BY
+				rv.theatersub_id
+				, tt.ticket_type_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_type_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+		EXEC (@sql);
+	END
+END
+ELSE IF @circuit_id IS NOT NULL
+BEGIN
+	SELECT @name_list = @name_list + ',[' + ticket_type_name + ']' 
+	FROM
+	(
+		SELECT DISTINCT 
+			tt.ticket_type_name
+		FROM tblRevenue rv
+		INNER JOIN tblTheater t
+			ON t.theater_id = rv.theater_id
+		INNER JOIN tblTicketTypeRevenueDetail ttd
+			ON ttd.revenue_id = rv.revenueid
+		INNER JOIN tblTicketType tt
+			ON tt.ticket_type_id = ttd.ticket_type_id
+		WHERE rv.movies_id = @movie_id
+			AND t.circuit_id = @circuit_id
+			AND rv.revenue_date &gt;= @start_date
+			AND rv.revenue_date &lt;= @end_date
+	) tmp
+	;
+
+	IF @name_list &lt;&gt; '' 
+	BEGIN
+		SET @name_list = RIGHT(@name_list, LEN(@name_list) - 1);
+		--SELECT @name_list;
+		
+		SET @sql =
+		'
+		SELECT
+			*
+		FROM
+		(
+			SELECT 
+				t.theater_id
+				, tt.ticket_type_name
+				, SUM(ttd.quantity) AS quantity
+			FROM tblRevenue rv
+			INNER JOIN tblTheater t
+				ON t.theater_id = rv.theater_id
+			INNER JOIN tblTicketTypeRevenueDetail ttd
+				ON ttd.revenue_id = rv.revenueid
+			INNER JOIN tblTicketType tt
+				ON tt.ticket_type_id = ttd.ticket_type_id
+			WHERE rv.movies_id = ' + CONVERT(VARCHAR(MAX), @movie_id) + '
+				AND rv.revenue_date &gt;= ''' + CONVERT(varchar(10), @start_date, 120) + '''
+				AND rv.revenue_date &lt;= ''' + CONVERT(varchar(10), @end_date, 120) + '''
+				AND t.circuit_id = ' + CONVERT(VARCHAR(MAX), @circuit_id) + '
+			GROUP BY
+				t.theater_id
+				, tt.ticket_type_name
+		) p
+		PIVOT
+		(
+			SUM(quantity) FOR ticket_type_name IN(' + @name_list + ')
+		) AS pvt
+		;
+		';
+		EXEC (@sql);
+	END
+END
+ELSE
+BEGIN
+	SELECT 
+		t.circuit_id
+		, SUM(ttd.quantity) AS [Ticket Type Usage]
+	FROM tblRevenue rv
+	INNER JOIN tblTheater t
+		ON t.theater_id = rv.theater_id
+	INNER JOIN tblTicketTypeRevenueDetail ttd
+		ON ttd.revenue_id = rv.revenueid
+	INNER JOIN tblTicketType tt
+		ON tt.ticket_type_id = ttd.ticket_type_id
+	WHERE rv.movies_id = @movie_id
+		AND rv.revenue_date &gt;= @start_date
+		AND rv.revenue_date &lt;= @end_date
+	GROUP BY
+		t.circuit_id
+	;
+END</value>
+  </data>
+</root>

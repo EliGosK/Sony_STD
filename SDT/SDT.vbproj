@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95141C14-64BD-4EC2-BDB8-932E03BE9D8F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SDT</RootNamespace>
+    <AssemblyName>SDT</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SDT.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SDT.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ServerExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Checker\Default.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DLL\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="images\back1.gif" />
+    <Content Include="images\calendar_01.jpg" />
+    <Content Include="images\ctbv.jpg" />
+    <Content Include="images\next1.gif" />
+    <Content Include="images\search.png" />
+    <Content Include="images\search1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserControls\HeaderContent.ascx" />
+    <Content Include="UserControls\MovieFinder.ascx" />
+    <Content Include="UserControls\TrailerCollectionFinder.ascx" />
+    <Content Include="UserControls\TrailerFinder.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Checker\ActionMenu.aspx.designer.vb">
+      <DependentUpon>ActionMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\ActionMenu.aspx.vb">
+      <DependentUpon>ActionMenu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\ProblemRecord.aspx.designer.vb">
+      <DependentUpon>ProblemRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\ProblemRecord.aspx.vb">
+      <DependentUpon>ProblemRecord.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\SendFreeTicketAndPerCap.aspx.designer.vb">
+      <DependentUpon>SendFreeTicketAndPerCap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\SendFreeTicketAndPerCap.aspx.vb">
+      <DependentUpon>SendFreeTicketAndPerCap.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\SendRevenue.aspx.designer.vb">
+      <DependentUpon>SendRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\SendRevenue.aspx.vb">
+      <DependentUpon>SendRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\ConfirmMovieRelease.aspx.designer.vb">
+      <DependentUpon>ConfirmMovieRelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\ConfirmMovieRelease.aspx.vb">
+      <DependentUpon>ConfirmMovieRelease.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\LogIn.aspx.designer.vb">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\LogIn.aspx.vb">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\Master\CheckerBase.Master.designer.vb">
+      <DependentUpon>CheckerBase.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\Master\CheckerBase.Master.vb">
+      <DependentUpon>CheckerBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checker\Master\CheckerTransaction.Master.designer.vb">
+      <DependentUpon>CheckerTransaction.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\Master\CheckerTransaction.Master.vb">
+      <DependentUpon>CheckerTransaction.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checker\MovieList.aspx.designer.vb">
+      <DependentUpon>MovieList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\MovieList.aspx.vb">
+      <DependentUpon>MovieList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checker\PreCondition.aspx.designer.vb">
+      <DependentUpon>PreCondition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\PreCondition.aspx.vb">
+      <DependentUpon>PreCondition.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\RemainMovieList.aspx.designer.vb">
+      <DependentUpon>RemainMovieList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\RemainMovieList.aspx.vb">
+      <DependentUpon>RemainMovieList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\ConfirmMovieTerminate.aspx.designer.vb">
+      <DependentUpon>ConfirmMovieTerminate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\ConfirmMovieTerminate.aspx.vb">
+      <DependentUpon>ConfirmMovieTerminate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\SendTicketType.aspx.designer.vb">
+      <DependentUpon>SendTicketType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\SendTicketType.aspx.vb">
+      <DependentUpon>SendTicketType.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\SystemMessage.aspx.designer.vb">
+      <DependentUpon>SystemMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\SystemMessage.aspx.vb">
+      <DependentUpon>SystemMessage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\TrailerCollection.aspx.designer.vb">
+      <DependentUpon>TrailerCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\TrailerCollection.aspx.vb">
+      <DependentUpon>TrailerCollection.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checker\TrailerCollectionInsert.aspx.designer.vb">
+      <DependentUpon>TrailerCollectionInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\TrailerCollectionInsert.aspx.vb">
+      <DependentUpon>TrailerCollectionInsert.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Checker\Trailer.aspx.designer.vb">
+      <DependentUpon>Trailer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checker\Trailer.aspx.vb">
+      <DependentUpon>Trailer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatePicker.ascx.designer.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatePicker.ascx.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HeaderContent.ascx.designer.vb">
+      <DependentUpon>HeaderContent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HeaderContent.ascx.vb">
+      <DependentUpon>HeaderContent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MovieFinder.ascx.designer.vb">
+      <DependentUpon>MovieFinder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MovieFinder.ascx.vb">
+      <DependentUpon>MovieFinder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TrailerCollectionFinder.ascx.designer.vb">
+      <DependentUpon>TrailerCollectionFinder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TrailerCollectionFinder.ascx.vb">
+      <DependentUpon>TrailerCollectionFinder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TrailerFinder.ascx.designer.vb">
+      <DependentUpon>TrailerFinder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TrailerFinder.ascx.vb">
+      <DependentUpon>TrailerFinder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Checker.css" />
+    <Content Include="Checker\ActionMenu.aspx" />
+    <Content Include="Checker\ChangePassword.aspx" />
+    <Content Include="Checker\Explorer.aspx" />
+    <Content Include="Checker\ProblemRecord.aspx" />
+    <Content Include="Checker\SendFreeTicketAndPerCap.aspx" />
+    <Content Include="Checker\SendRevenue.aspx" />
+    <Content Include="Checker\ConfirmMovieRelease.aspx" />
+    <Content Include="Checker\LogIn.aspx" />
+    <Content Include="Checker\Master\CheckerTransaction.Master" />
+    <Content Include="Checker\Master\CheckerBase.Master" />
+    <Content Include="Checker\MovieList.aspx" />
+    <Content Include="Checker\NothingResult.htm" />
+    <Content Include="Checker\PreCondition.aspx" />
+    <Content Include="Checker\RemainMovieList.aspx" />
+    <Content Include="Checker\ConfirmMovieTerminate.aspx" />
+    <Content Include="Checker\SendTicketType.aspx" />
+    <Content Include="Checker\SqlQuery.aspx" />
+    <Content Include="Checker\SystemMessage.aspx" />
+    <Content Include="Checker\Trailer.aspx" />
+    <Content Include="Checker\TrailerCollection.aspx" />
+    <Content Include="Checker\TrailerCollectionInsert.aspx" />
+    <Content Include="DLL\ServerExplorer.dll" />
+    <Content Include="images\icon_accept.gif" />
+    <Content Include="images\icon_new.gif" />
+    <Content Include="images\icon_remove.gif" />
+    <Content Include="images\icon_terminate.gif" />
+    <Content Include="images\icon_ticket_type.gif" />
+    <Content Include="images\icon_ticket_rev.gif" />
+    <Content Include="images\icon_wait.gif" />
+    <Content Include="js\Duo-Web-v1.bundled.js" />
+    <Content Include="NoAccess.htm" />
+    <Content Include="FileNotFound.htm" />
+    <Content Include="GenericErrorPage.htm" />
+    <Content Include="UserControls\DatePicker.ascx" />
+    <Content Include="js\tigra_calendar\img\cal.gif" />
+    <Content Include="js\tigra_calendar\img\next_mon.gif" />
+    <Content Include="js\tigra_calendar\img\next_year.gif" />
+    <Content Include="js\tigra_calendar\img\no_cal.gif" />
+    <Content Include="js\tigra_calendar\img\prev_mon.gif" />
+    <Content Include="js\tigra_calendar\img\prev_year.gif" />
+    <Content Include="js\tigra_calendar\tcal.css" />
+    <Content Include="js\tigra_calendar\tcal.js" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDTCommon\SDTCommon.vbproj">
+      <Project>{729173D6-B377-4A94-B494-7982A3F913C6}</Project>
+      <Name>SDTCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10467</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/SDT</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

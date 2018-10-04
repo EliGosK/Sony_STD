@@ -1,0 +1,68 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="CheckerTransaction.master.vb"
+    Inherits="SDT.Checker.Master.CheckerTransaction" %>
+
+<%@ Import Namespace="SDTCommon" %>
+<%@ Register Src="../../UserControls/HeaderContent.ascx" TagName="HeaderContent"
+    TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- meta name="viewport" content="width=<%= Request.Browser("ScreenPixelsWidth") %>, height=<%=Request.Browser("ScreenPixelsHeight")%>" /-->
+    <meta name="viewport" content="width=<%= Request.Browser("ScreenPixelsWidth") %> ; initial-scale=1.0" />
+    <title>SDT</title>
+    <link href="../../Checker.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">        history.forward()</script>
+
+    <script language="javascript" type="text/javascript">
+        function allownumbers(e) {
+            var key = window.event ? e.keyCode : e.which;
+            var keychar = String.fromCharCode(key);
+            var reg = new RegExp("[0-9.]");
+            if (key == 8) {
+                keychar = String.fromCharCode(key);
+            }
+            if (key == 13) {
+                key = 8;
+                keychar = String.fromCharCode(key);
+            }
+            return reg.test(keychar);
+        } 
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="area">
+        <div style="text-align: center;">
+            <br />
+            <asp:Label ID="lblTitle" runat="server" CssClass="labelTitle"></asp:Label>
+            <br />
+            <uc1:HeaderContent ID="HeaderContent1" runat="server" />
+            <br />
+            <form id="form1" runat="server">
+            <asp:HiddenField ID="hdfTempData" runat="server" />
+            <% 
+                If Not String.IsNullOrEmpty(GetRequest(ParamList.MovieName)) Then
+            %>
+            <table class="tableDisplay">
+                <tr>
+                    <td class="tdTitle" style="width: 40px">
+                        เรื่อง
+                    </td>
+                    <td class="labelFocus" bgcolor="#DDDDDD">
+                        <%= GetRequest(ParamList.MovieName)%>
+                    </td>
+                </tr>
+            </table>
+            <%
+            End If
+            %>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

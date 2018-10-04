@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Delete" xml:space="preserve">
+    <value>DECLARE @revenue_comp_header_id AS INT
+SELECT @revenue_comp_header_id = revenue_comp_header_id FROM tblRevenueCompHeader
+WHERE revenue_date = @revenue_date
+	AND movie_id = @movie_id
+	AND theater_id = @theater_id
+;
+DELETE tblRevenueCompDetail
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;
+DELETE tblRevenueCompHeader
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;
+DELETE tblCompRevenue
+WHERE comprevenue_id = @revenue_comp_header_id
+;</value>
+  </data>
+  <data name="DeleteAll" xml:space="preserve">
+    <value>DELETE tblRevenueCompDetail
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;
+DELETE tblRevenueCompHeader
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;
+DELETE tblCompRevenue
+WHERE comprevenue_id = @revenue_comp_header_id
+;</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>INSERT INTO tblRevenueCompHeader (
+	revenue_date
+	, movie_id
+	, theater_id
+	, all_screen
+	, all_session
+	, all_adms
+	, all_amount
+	, status_id
+	, update_by
+	, update_date
+	)
+VALUES (
+	@revenue_date
+	, @movie_id
+	, @theater_id
+	, @all_screen
+	, @all_session
+	, @all_adms
+	, @all_amount
+	, @status_id
+	, @update_by
+	, @cvDate
+	);
+
+SELECT SCOPE_IDENTITY();</value>
+  </data>
+  <data name="InsertUpdateOldTable" xml:space="preserve">
+    <value>SELECT ch.revenue_comp_header_id AS comprevenue_id
+	, ch.revenue_date AS comprevenue_date
+	, ch.movie_id AS movies_id
+	, ch.theater_id AS theater_id
+	, ch.all_screen AS comprevenue_screensum
+	, ch.all_session AS comprevenue_timesum
+	, ch.all_adms AS comprevenue_admssum
+	, ch.all_amount AS comprevenue_amountsum
+	, ch.status_id AS status_id
+	, ch.update_by AS user_id
+	, ch.update_date AS comprevenue_lastupdate
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					1
+					, 5
+					)
+				THEN cd.amount
+			ELSE 0
+			END) AS comprevenue_amountor
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					1
+					, 5
+					)
+				THEN cd.adms
+			ELSE 0
+			END) AS comprevenue_admsor
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					1
+					, 5
+					)
+				THEN cd.count_session
+			ELSE 0
+			END) AS comprevenue_timeor
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					1
+					, 5
+					)
+				THEN cd.count_screen
+			ELSE 0
+			END) AS comprevenue_screenor
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					2
+					, 6
+					)
+				THEN cd.amount
+			ELSE 0
+			END) AS comprevenue_amountth
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					2
+					, 6
+					)
+				THEN cd.adms
+			ELSE 0
+			END) AS comprevenue_admsth
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					2
+					, 6
+					)
+				THEN cd.count_session
+			ELSE 0
+			END) AS comprevenue_timeth
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id IN (
+					2
+					, 6
+					)
+				THEN cd.count_screen
+			ELSE 0
+			END) AS comprevenue_screenth
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id NOT IN (
+					1
+					, 5
+					, 2
+					, 6
+					)
+				THEN cd.amount
+			ELSE 0
+			END) AS comprevenue_amounttd
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id NOT IN (
+					1
+					, 5
+					, 2
+					, 6
+					)
+				THEN cd.adms
+			ELSE 0
+			END) AS comprevenue_admstd
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id NOT IN (
+					1
+					, 5
+					, 2
+					, 6
+					)
+				THEN cd.count_session
+			ELSE 0
+			END) AS comprevenue_timetd
+	, SUM(CASE 
+			WHEN cd.film_type_sound_id NOT IN (
+					1
+					, 5
+					, 2
+					, 6
+					)
+				THEN cd.count_screen
+			ELSE 0
+			END) AS comprevenue_screentd
+INTO #tmpOldCompRev
+FROM tblRevenueCompHeader ch
+LEFT JOIN tblRevenueCompDetail cd
+	ON cd.revenue_comp_header_id = ch.revenue_comp_header_id
+WHERE ch.revenue_comp_header_id = @revenue_comp_header_id
+GROUP BY ch.revenue_comp_header_id
+	, ch.revenue_date
+	, ch.movie_id
+	, ch.theater_id
+	, ch.all_screen
+	, ch.all_session
+	, ch.all_adms
+	, ch.all_amount
+	, ch.status_id
+	, ch.update_by
+	, ch.update_date;
+
+IF EXISTS (
+		SELECT 1
+		FROM tblCompRevenue
+		WHERE comprevenue_id = @revenue_comp_header_id
+		)
+BEGIN
+	UPDATE cr
+	SET cr.comprevenue_date = ch.comprevenue_date
+		, cr.movies_id = ch.movies_id
+		, cr.theater_id = ch.theater_id
+		, cr.comprevenue_screensum = ch.comprevenue_screensum
+		, cr.comprevenue_timesum = ch.comprevenue_timesum
+		, cr.comprevenue_admssum = ch.comprevenue_admssum
+		, cr.comprevenue_amountsum = ch.comprevenue_amountsum
+		, cr.status_id = ch.status_id
+		, cr.user_id = ch.user_id
+		, cr.comprevenue_lastupdate = ch.comprevenue_lastupdate
+		, cr.comprevenue_amountor = ch.comprevenue_amountor
+		, cr.comprevenue_admsor = ch.comprevenue_admsor
+		, cr.comprevenue_timeor = ch.comprevenue_timeor
+		, cr.comprevenue_screenor = ch.comprevenue_screenor
+		, cr.comprevenue_amountth = ch.comprevenue_amountth
+		, cr.comprevenue_admsth = ch.comprevenue_admsth
+		, cr.comprevenue_timeth = ch.comprevenue_timeth
+		, cr.comprevenue_screenth = ch.comprevenue_screenth
+		, cr.comprevenue_amounttd = ch.comprevenue_amounttd
+		, cr.comprevenue_admstd = ch.comprevenue_admstd
+		, cr.comprevenue_timetd = ch.comprevenue_timetd
+		, cr.comprevenue_screentd = ch.comprevenue_screentd
+	FROM tblCompRevenue cr
+	INNER JOIN #tmpOldCompRev ch
+		ON ch.comprevenue_id = cr.comprevenue_id;
+END
+ELSE
+BEGIN
+	SET IDENTITY_INSERT tblCompRevenue ON
+
+	INSERT INTO tblCompRevenue (
+		comprevenue_id
+		, comprevenue_date
+		, movies_id
+		, theater_id
+		, comprevenue_screensum
+		, comprevenue_timesum
+		, comprevenue_admssum
+		, comprevenue_amountsum
+		, status_id
+		, user_id
+		, comprevenue_lastupdate
+		, comprevenue_amountor
+		, comprevenue_admsor
+		, comprevenue_timeor
+		, comprevenue_screenor
+		, comprevenue_amountth
+		, comprevenue_admsth
+		, comprevenue_timeth
+		, comprevenue_screenth
+		, comprevenue_amounttd
+		, comprevenue_admstd
+		, comprevenue_timetd
+		, comprevenue_screentd
+		)
+	SELECT comprevenue_id
+		, comprevenue_date
+		, movies_id
+		, theater_id
+		, comprevenue_screensum
+		, comprevenue_timesum
+		, comprevenue_admssum
+		, comprevenue_amountsum
+		, status_id
+		, user_id
+		, comprevenue_lastupdate
+		, comprevenue_amountor
+		, comprevenue_admsor
+		, comprevenue_timeor
+		, comprevenue_screenor
+		, comprevenue_amountth
+		, comprevenue_admsth
+		, comprevenue_timeth
+		, comprevenue_screenth
+		, comprevenue_amounttd
+		, comprevenue_admstd
+		, comprevenue_timetd
+		, comprevenue_screentd
+	FROM #tmpOldCompRev;
+
+	SET IDENTITY_INSERT tblCompRevenue OFF
+END
+
+DROP TABLE #tmpOldCompRev;</value>
+  </data>
+  <data name="RefreshHeaderAfterEditDetail" xml:space="preserve">
+    <value>UPDATE header
+SET
+	header.all_screen = new_data.new_all_screen
+	, header.all_session = new_data.new_all_session
+	, header.all_adms = new_data.new_all_adms
+	, header.all_amount = new_data.new_all_amount
+	, header.status_id = CASE WHEN header.status_id = 1 THEN 1 ELSE new_data.new_status_id END
+	, header.update_by = @update_by
+	, header.update_date = @cvDate
+FROM tblRevenueCompHeader header
+INNER JOIN
+(
+	SELECT
+		detail.revenue_comp_header_id
+		, SUM(detail.count_screen) AS new_all_screen
+		, SUM(detail.count_session) AS new_all_session
+		, SUM(detail.adms) AS new_all_adms
+		, SUM(detail.amount) AS new_all_amount
+		, MAX(detail.status_id) AS new_status_id
+	FROM tblRevenueCompDetail detail
+	WHERE detail.revenue_comp_header_id = @revenue_comp_header_id
+	GROUP BY
+		detail.revenue_comp_header_id
+) AS new_data
+	ON new_data.revenue_comp_header_id = header.revenue_comp_header_id
+WHERE header.revenue_comp_header_id = @revenue_comp_header_id
+	AND
+	(
+		header.all_screen &lt;&gt; new_data.new_all_screen
+		OR header.all_session &lt;&gt; new_data.new_all_session
+		OR header.all_adms &lt;&gt; new_data.new_all_adms
+		OR header.all_amount &lt;&gt; new_data.new_all_amount
+		OR header.status_id &lt;&gt; new_data.new_status_id
+	)
+;</value>
+  </data>
+  <data name="SelectData" xml:space="preserve">
+    <value>SELECT
+	rch.revenue_comp_header_id
+	, rch.revenue_date
+	, rch.movie_id
+	, rch.theater_id
+	, rch.all_screen
+	, rch.all_session
+	, rch.all_adms
+	, rch.all_amount
+	, rch.status_id
+	, rch.update_by
+	, rch.update_date
+	
+	, m.movietype_id
+	, SUBSTRING(m.movie_nameen, 1, 15) AS ShortName
+	, m.movie_nameen + '/' + m.movie_nameth AS MovieName
+FROM tblRevenueCompHeader AS rch
+INNER JOIN tblMovie AS m
+	ON m.movie_id = rch.movie_id</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>UPDATE tblRevenueCompHeader
+SET
+	revenue_date = @revenue_date
+	, movie_id = @movie_id
+	, theater_id = @theater_id
+	, all_screen = @all_screen
+	, all_session = @all_session
+	, all_adms = @all_adms
+	, all_amount = @all_amount
+	, status_id = @status_id
+	, update_by = @update_by
+	, update_date = @cvDate
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;</value>
+  </data>
+  <data name="UpdateStatus" xml:space="preserve">
+    <value>UPDATE tblRevenueCompHeader
+SET
+	status_id = @status_id
+	, update_date = @cvDate
+WHERE revenue_comp_header_id = @revenue_comp_header_id
+;</value>
+  </data>
+</root>
